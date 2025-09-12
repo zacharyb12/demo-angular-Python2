@@ -4,6 +4,7 @@ import { HomeRouter } from '../components/pages/demo/home-router/home-router';
 import { Bindings } from '../components/pages/demo/bindings/bindings';
 import { ExoRouting } from '../components/pages/exercices/exo-routing/exo-routing';
 import { CompteurComponent } from '../components/pages/exercices/compteur-component/compteur-component';
+import { ProductDetails } from '../components/pages/exercices/product-details/product-details';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -11,7 +12,8 @@ export const routes: Routes = [
         {path : 'bindings' , component : Bindings}  
     ]},
     {path : 'exo' , component : ExoRouting , children : [ 
-        {path : 'compteur' , component : CompteurComponent}
+        {path : 'compteur' , component : CompteurComponent},
+        {path : 'product' , component : ProductDetails}
     ]}
 ];
 
