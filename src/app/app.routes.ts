@@ -5,11 +5,13 @@ import { Bindings } from '../components/pages/demo/bindings/bindings';
 import { ExoRouting } from '../components/pages/exercices/exo-routing/exo-routing';
 import { CompteurComponent } from '../components/pages/exercices/compteur-component/compteur-component';
 import { ProductDetails } from '../components/pages/exercices/product-details/product-details';
+import { Bootstrap } from '../components/pages/demo/bootstrap/bootstrap';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
     {path : 'demo' , component : HomeRouter ,children : [ 
-        {path : 'bindings' , component : Bindings}  
+        {path : 'bindings' , component : Bindings},
+        {path : 'bootstrap' , component : Bootstrap}
     ]},
     {path : 'exo' , component : ExoRouting , children : [ 
         {path : 'compteur' , component : CompteurComponent},
