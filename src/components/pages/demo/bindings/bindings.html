@@ -1,25 +1,28 @@
-<h1>hello</h1>
+<h1 class="text-center mt-5">Bindings</h1>
 
-<div class="card w-50 p-3 m-auto shadow bg-danger">
+<div class="card w-75 p-3 m-auto mt-5 shadow text-center">
 
     <h2>Binding One-way</h2>
 
     <p>Consiste a afficher un element du fichier typescript Sans possibilités de le modifier</p>
-    <p>
-        value : {{value}}
-    </p>
-    <p>
-        userPassword : {{user.password}}
-    </p>
-    <p>
-        userPassword : {{user.email}}
-    </p>
-    <p>
-        userPassword : {{user.age}}
-    </p>
+    <div class="card p-3 m-auto w-75">
+
+        <p>
+            value : {{value}}
+        </p>
+        <p>
+            userPassword : {{user.password}}
+        </p>
+        <p>
+            userPassword : {{user.email}}
+        </p>
+        <p>
+            userPassword : {{user.age}}
+        </p>
+    </div>
 </div>
 
-<div>
+<div class="card w-75 p-3 m-auto mt-5 shadow text-center">
     <h2>Bindings Two-way</h2>
 
     <p>Consiste a afficher et modifier un element du fichier typescript </p>
@@ -27,7 +30,7 @@
     <input type="text" [(ngModel)]="message" >
 </div>
 
-<div>
+<div class="card w-75 p-3 m-auto mt-5 shadow text-center">
     <h2>Event-Bindings </h2>
 
 <p>Event bindings consiste a executer une action lors d'un evenement utilisateur</p>
@@ -36,7 +39,7 @@
     <button (click)="updateMessage()" (mouseleave)="updateMessage()">update</button>
 </div>
 
-<div>
+<div class="card w-75 p-3 m-auto mt-5 shadow text-center">
     <h2>Attributes-Bindings</h2>
     <p>Consiste a definir l'affichage en fonction d'un booleen</p>
     <input type="text" [disabled]="isActive">
