@@ -3,7 +3,7 @@ import { HomeComponent } from '../components/pages/home-component/home-component
 import { HomeRouter } from '../components/pages/demo/home-router/home-router';
 import { Bindings } from '../components/pages/demo/bindings/bindings';
 import { ExoRouting } from '../components/pages/exercices/exo-routing/exo-routing';
-import { ExoBindings } from '../components/pages/exercices/exo-bindings/exo-bindings';
+import { CompteurComponent } from '../components/pages/exercices/compteur-component/compteur-component';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -11,7 +11,7 @@ export const routes: Routes = [
         {path : 'bindings' , component : Bindings}  
     ]},
     {path : 'exo' , component : ExoRouting , children : [ 
-        {path : 'bindings' , component : ExoBindings}
+        {path : 'compteur' , component : CompteurComponent}
     ]}
 ];
 

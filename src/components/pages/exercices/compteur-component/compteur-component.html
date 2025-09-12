@@ -1,0 +1,11 @@
+<h1 class="text-center mt-5 ">Compteur</h1>
+
+
+<div class="card w-75 m-auto mt-5">
+    <p class="text-center card p-3 w-25 m-auto mt-3 mb-3">{{heures}} h {{minutes}} min {{secondes}} sec</p>
+    <div class="d-flex justify-content-evenly">
+        <button class="btn btn-sm btn-primary" (click)="start()">start</button>
+        <button class="btn btn-sm btn-warning" (click)="pause()">pause</button>
+        <button class="btn btn-sm btn-danger" (click)="reset()">reset</button>
+    </div>
+</div>
