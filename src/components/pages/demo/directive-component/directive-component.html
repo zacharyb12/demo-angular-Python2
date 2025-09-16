@@ -1,0 +1,68 @@
+<h1>Les Directives</h1>
+
+<div class="card w-75 p-3 m-auto">
+
+    <p>
+        L'ancienne façon de faire necessite un import 
+</p>
+<div *ngIf="true">
+    <p>test 2</p>
+</div>
+
+<p>
+    La nouvelle façon de faire ne necessite pas d' import 
+</p>
+@if(true){
+<p>test 1</p>
+}
+</div>
+
+<div class="card w-75 p-3 m-auto mt-3">
+    <p>La directive If permet de définir si on affiche quelque chose ou pas </p>
+    @if(isVisible){
+    <p>{{ message }}</p>
+    }
+    <button (click)="toggleVisibility()">Show</button>
+</div>
+
+
+<div class="card w-75 p-3 m-auto mt-3">
+
+    <p>
+        La directive If permet de gerer l'affichage en fonction d'une valeur booleen 
+        comme le role d'un user === 'admin'
+    </p>
+        @if(user.isAdmin){
+
+            <ul>
+                <li>Gestion Utilisateurs</li>
+                <li>Gestion Produits</li>
+                <li>Gestion Commande</li>
+            </ul>
+        }
+</div>
+
+<div>
+    <p>La directive Else permet de definir ce qui sera afficher si le if renvoie false</p>
+
+    <div>
+
+        <div *ngIf="";else elseBlock >
+            <p>Le message est visible si la condition du if est remplie</p>
+        </div>
+        
+        <ng-template #elseBlock>
+            <p>Le message est visible si la condition du if n' est pas remplie</p>
+        </ng-template>
+
+    </div>
+
+    <div>
+        @if(true){
+            <p>Le message est visible si la condition du if est remplie</p>
+        }
+        @else {
+            <p>Le message est visible si la condition du if n' est pas remplie</p>
+        }
+    </div>
+</div>

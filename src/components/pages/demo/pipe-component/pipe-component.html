@@ -131,5 +131,30 @@
     </div>
 </div>
 
-ng g pipe Nom_dossier/nom_composant
-ng g pipe pipe-emoji/emoji-pipe
+<div>
+    <h4>Pipe Custom</h4>
+    <p>Creer son propre pipe</p>
+    {{ texteEmoji | emoji}}
+
+</div>
+
+<div class="card w-75 p-3 m-3 m-auto">
+    <h3>Pipes custom avec input</h3>
+
+    <div>
+        <h5>Pipes Temperature</h5>
+        <div>
+            <h6>To Fahrenheit</h6>
+            <input type="number" [(ngModel)]="valueInputF">
+            <br>
+            Fahrenheit : {{valueInputF | tofarheneit}}
+        </div>
+        <div>
+            <h6>To Celcius</h6>
+            <input type="number" [(ngModel)]="valueInputC">
+            <br>
+            Celcius : {{valueInputC | tocelcius }}
+        </div>
+    </div>
+
+</div>
