@@ -1,13 +1,15 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { User } from '../../../../models/user.model';
-import { NgbSlide } from "../../../../../node_modules/@ng-bootstrap/ng-bootstrap/index";
+import { Bootstrap } from "../bootstrap/bootstrap";
+import { ProductDetails } from "../../exercices/product-details/product-details";
 
 @Component({
   selector: 'app-directive-component',
   imports: [
     NgIf,
-    NgbSlide
+    Bootstrap,
+    ProductDetails
 ],
   templateUrl: './directive-component.html',
   styleUrl: './directive-component.css'
@@ -29,4 +31,27 @@ age : 30,
 isAdmin : false
 }
 
+myValue : number = 10;
+
+
+listUsers : User[] = [
+  {
+    email : "john.doe@example.com",
+    password : "password123",
+    age : 30,
+    isAdmin : false
+  },
+    {
+    email : "jane.doe@example.com",
+    password : "password123",
+    age : 30,
+    isAdmin : false
+  },
+    {
+    email : "johnny.doe@example.com",
+    password : "password123",
+    age : 30,
+    isAdmin : false
+  }
+]
 }

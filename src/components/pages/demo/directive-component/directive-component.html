@@ -42,12 +42,14 @@
         }
 </div>
 
-<div>
+<div class="card w-75 p-3 m-auto mt-3">
     <p>La directive Else permet de definir ce qui sera afficher si le if renvoie false</p>
 
-    <div>
-
-        <div *ngIf="";else elseBlock >
+    <div class="card w-75 p-3 m-auto mt-3">
+        <p>L 'ancienne methode comprend un bloc qui contient une directive " *ngIf="true; else elseBlock" "</p>
+        <p>et un block Else " #elseBlock "</p>
+        <h5>If else Old</h5>
+        <div *ngIf="true; else elseBlock" >
             <p>Le message est visible si la condition du if est remplie</p>
         </div>
         
@@ -55,9 +57,15 @@
             <p>Le message est visible si la condition du if n' est pas remplie</p>
         </ng-template>
 
+
+        
+
     </div>
 
-    <div>
+    <div class="card w-75 p-3 m-auto mt-3">
+        <p>La nouvelle methode comprend un bloc If et un bloc Else</p>
+        <p>Elle ne necessite pas d' import  et permet d'avoir plusieurs bloc If ( en fonction de la condition ) </p>
+        <h5>If else New</h5>
         @if(true){
             <p>Le message est visible si la condition du if est remplie</p>
         }
@@ -65,4 +73,36 @@
             <p>Le message est visible si la condition du if n' est pas remplie</p>
         }
     </div>
+
+    <div>
+        <p>La nouvelle methode comprend un bloc Switch</p>
+        <p>Elle utilise une valeur en parametres et comprend un bloc Default</p>
+        @switch (myValue) {
+            @case (1) {
+                <p>La valeur est 1</p>
+            }
+            @case (5) {
+                <p>La valeur est 5</p>
+            }
+            @default {
+                <p>La valeur n' est ni 1 ni 5</p>
+            }
+        }
+    </div>
+</div>
+
+<div class="card w-75 p-3 m-auto mt-3">
+    <p> La Directive For très utilisé , permet de repeter un bloc pour un ensemble d'éléments ( array[])</p>
+
+    <div *ngFor="let user of listUsers"></div>
+
+    @for(user of listUsers;track user.age ){
+        <div>
+            <h5>{{user.email}}</h5>
+            <p>{{ user.password }}</p>
+            <h5>{{user.age}}</h5>
+            <button>Details</button>
+        </div>
+    }
+
 </div>
