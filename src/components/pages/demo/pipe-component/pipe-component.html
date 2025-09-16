@@ -1,0 +1,135 @@
+
+<div class="card w-75 p-3 m-3 m-auto">
+    <h3>Les Pipes texte</h3>
+
+    <div>
+        <h5>Uppercase Pipe</h5>
+        <p>Transforme le texte en MAJUSCULES</p>
+        {{message | uppercase}}
+    </div>
+
+        <div>
+        <h5>Lowercase Pipe</h5>
+        <p>Transforme le texte en minuscules</p>
+        {{message | lowercase}}
+    </div>
+
+            <div>
+        <h5>TitleCase Pipe</h5>
+        <p>Transforme la première lettre de chaque mot en MAJUSCULE</p>
+        {{message | titlecase}}
+    </div>
+
+</div>
+
+
+<div class="card w-75 p-3 m-3 m-auto">
+    <h3>Les Pipes Number</h3>
+
+    <div>
+        <h5>Number Pipe</h5>
+        <p>Formate le nombre selon les conventions locales</p>
+        <p>les paramètres sont : </p>
+        <p>la premiere valeur est le nombre minimum de chiffre avant la virgule </p>
+        <p>la deuxieme va définir le nombre minimum de chiffre après la virgule</p>
+        <p>le troisieme va définir le nombre maximum de chiffre après la virgule</p>
+        {{myNumber}}
+        <br>
+        {{myNumber | number }}
+        <br>
+        {{myNumber | number : '0.0-2'}}
+        <br>
+        {{myNumber2 | number : '3.0-2'}}
+                <br>
+        {{myNumber2 | number : '3.2-2'}}
+    </div>
+</div>
+
+<div class="card w-75 p-3 m-3 m-auto">
+    <h3>Les Pipes Currency</h3>
+
+    <div>
+        <h5>Currency Pipe</h5>
+        <p>Formate le nombre en tant que devise</p>
+
+        <p>Valeur par defaut : $</p>
+        {{myCurrency | currency}}
+        <br>
+
+        <p>Valeur 'EUR' : €</p>
+        {{myCurrency | currency : 'EUR' }}
+        <br>
+
+                <p>Valeur 'CAD' : €</p>
+        {{myCurrency | currency : 'CAD'}}
+        <br>
+
+        <p>Valeur 'EUR' : €</p>
+        {{myCurrency | currency :  'EUR' : 'symbol' :'2.2-2' }}
+        <br>
+
+    </div>
+</div>
+
+
+<div class="card w-75 p-3 m-3 m-auto">
+    <h3>Les Dates Pipes</h3>
+
+    <div>
+        <h5>Date Pipe</h5>
+        <p>Sans Pipes</p>
+        {{myDate}}
+        <br>
+        {{myDate | date : 'full'}}
+    </div>
+
+    <div>
+        <p>Avec Pipes</p>
+        {{myDate | date}}
+    </div>
+
+        <div>
+        <p>Avec Pipes et params</p>
+        {{myDate | date : 'dd/MM/yyyy'}}
+    </div>
+
+            <div>
+        <p>Avec Pipes et short</p>
+        {{myDate | date : 'short'}}
+    </div>
+
+                <div>
+        <p>Avec Pipes et short date</p>
+        {{myDate | date : 'shortDate'}}
+    </div>
+
+        <div>
+        <p>Avec Pipes Europe</p>
+        {{myDate | date : 'full' : 'GMT+2' }}
+        <br>
+        {{myDate | date : 'full' : 'GMT+8' }}
+    </div>
+
+            <div>
+        <p>Avec Pipes Europe</p>
+        <p>Europe</p>
+        {{myDate | date : 'dd/MM/yyyy HH:mm' : 'GMT+2' }}
+        <br>
+        <p>GMT+8</p>
+        {{myDate | date : 'dd/MM/yyyy HH:mm' : 'GMT+8' }}
+
+    </div>
+
+    <div class="card">
+        <h4>Pipe Json</h4>
+        <p>Transforme le contenu d'un objet en json</p>
+        <p>Sans Pipe</p>
+        {{user}}
+        <br>
+        <p>Avec Pipe</p>
+        {{user | json}}
+    </div>
+</div>
+
+ng g pipe Nom_dossier/nom_composant
+ng g pipe pipe-emoji/emoji-pipe
