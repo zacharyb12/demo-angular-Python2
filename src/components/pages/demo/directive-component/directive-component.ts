@@ -7,9 +7,7 @@ import { ProductDetails } from "../../exercices/product-details/product-details"
 @Component({
   selector: 'app-directive-component',
   imports: [
-    NgIf,
-    Bootstrap,
-    ProductDetails
+    NgIf
 ],
   templateUrl: './directive-component.html',
   styleUrl: './directive-component.css'
@@ -54,4 +52,10 @@ listUsers : User[] = [
     isAdmin : false
   }
 ]
+
+details(id : number){
+  alert("Details de l'utilisateur " + id);
+}
+
+
 }
