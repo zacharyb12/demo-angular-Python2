@@ -5,6 +5,6 @@
 }
 .selected{
     background-color: yellow;
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 10px 10px 5px black;
 }

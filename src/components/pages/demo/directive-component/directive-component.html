@@ -4,34 +4,51 @@
 
     <h2 class="text-center mt-3 mb-3">Les directives structurelles</h2>
 
-    <div class="">
+    <div class="w-75 m-auto p-3 mb-3">
     <p>Permet d'afficher ou masquer un element , ou de repeter un affichage sur base d'une liste </p>
     </div>
 
     <div class="card w-75 p-3 m-auto">
 
-        <p>
-            L'ancienne façon de faire necessite un import 
-    </p>
-    <div *ngIf="true">
-        <p>test 2</p>
-    </div>
+        <p>L'ancienne façon de faire necessite un import </p>
+            <span>
+                <code>
+                import &#123; NgIf &#125; from '@angular/common';
+                </code>
+            </span>
+            <br>
+
+            <span>
+                <code>
+                &lt;div *ngIf="true" &gt;
+                <br>
+                &lt;p&gt;test 1&lt;/p&gt;
+                <br>
+                &lt;/div&gt;
+                </code>
+            </span>
 
     <p>
         La nouvelle façon de faire ne necessite pas d' import 
     </p>
-    @if(true){
-    <p>test 1</p>
-    }
+        <span><code>
+            &#64;if(true)&#123;
+            &lt;p&gt;test 1&lt;/p&gt;
+        &#125;
+            </code>
+        </span>
     </div>
 
     <div class="card w-75 p-3 m-auto mt-3">
         <p>La directive If permet de définir si on affiche quelque chose ou pas </p>
 
-        @if(isVisible){
-
-        <p>{{ message }}</p>
-        }
+        <span><code>
+            &#64;if(isVisible)&#123;
+            <br>
+            &lt;p&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;
+            <br>
+            &#125;
+        </code></span>
 
         <button (click)="toggleVisibility()">Show</button>
     </div>
@@ -43,14 +60,19 @@
             La directive If permet de gerer l'affichage en fonction d'une valeur booleen 
             comme le role d'un user === 'admin'
         </p>
-            @if(user.isAdmin){
 
-                <ul>
-                    <li>Gestion Utilisateurs</li>
-                    <li>Gestion Produits</li>
-                    <li>Gestion Commande</li>
-                </ul>
-            }
+        <span><code>
+            &#64;if(user.isAdmin)&#123;
+            <br>
+            &lt;ul&gt;
+            <br>
+            &lt;li&gt;Gestion Utilisateurs&lt;/li&gt;
+            &lt;li&gt;Gestion Produits&lt;/li&gt;
+            &lt;li&gt;Gestion Commande&lt;/li&gt;
+            &lt;/ul&gt;
+            <br>
+            &#125;
+        </code></span>
     </div>
 
     <div class="card w-75 p-3 m-auto mt-3">
@@ -62,13 +84,20 @@
             <h5>If else Old</h5>
 
 
-            <div *ngIf="true; else elseBlock" >
-                <p>Le message est visible si la condition du if est remplie</p>
-            </div>
-            
-            <ng-template #elseBlock>
-                <p>Le message est visible si la condition du if n' est pas remplie</p>
-            </ng-template>
+            <span><code>
+                &lt;div *ngIf="true; else elseBlock" &gt;
+                <br>
+                &lt;p&gt;Le message est visible si la condition du if est remplie&lt;/p&gt;
+                <br>
+                &lt;/div&gt;
+                <br>
+                <br>
+                &lt;ng-template #elseBlock&gt;
+                <br>
+                &lt;p&gt;Le message est visible si la condition du if n' est pas remplie&lt;/p&gt;
+                <br>
+                &lt;/ng-template&gt;
+            </code></span>
 
 
         </div>
@@ -78,55 +107,135 @@
             <p>Elle ne necessite pas d' import  et permet d'avoir plusieurs bloc If ( en fonction de la condition ) </p>
             <h5>If else New</h5>
 
-            @if(true){
-                <p>Le message est visible si la condition du if est remplie</p>
-            }
-            @else {
-                <p>Le message est visible si la condition du if n' est pas remplie</p>
-            }
+            <span><code>
+                &#64;if(true)&#123;
+                <br>
+                &lt;p&gt;Le message est visible si la condition du if est remplie&lt;/p&gt;
+                <br>
+                &#125;
+                <br>
+                &#64;else &#123;
+                <br>
+                &lt;p&gt;Le message est visible si la condition du if n' est pas remplie&lt;/p&gt;
+                <br>
+                &#125;
+            </code></span>
+
 
         </div>
 
         <div class="card w-75 p-3 m-auto mt-3">
             <p>La nouvelle methode comprend un bloc Switch</p>
             <p>Elle utilise une valeur en parametres et comprend un bloc Default</p>
-            @switch (myValue) {
-                @case (1) {
-                    <p>La valeur est 1</p>
-                }
-                @case (5) {
-                    <p>La valeur est 5</p>
-                }
-                @default {
-                    <p>La valeur n' est ni 1 ni 5</p>
-                }
-            }
-
+            
+            <h4>Ancienne Version</h4>
+            <span><code>
+                &lt;div *ngSwitchCase="1"&gt;
+                <br>
+                &lt;p&gt;La valeur est 1&lt;/p&gt;
+                <br>
+                &lt;/div&gt;
+                <br>
+                &lt;div *ngSwitchCase="5"&gt;
+                <br>
+                &lt;p&gt;La valeur est 5&lt;/p&gt;
+                <br>
+                &lt;/div&gt;
+                <br>
+                &lt;div *ngSwitchDefault&gt;
+                <br>
+                &lt;p&gt;La valeur n' est ni 1 ni 5&lt;/p&gt;
+                <br>
+                &lt;/div&gt;
+                <br>
+                &#125;
+            </code></span>
+            
+            <h4>nouvelle version</h4>
+            <span><code>
+                &#64;switch (myValue) &#123;
+                <br>
+                &#64;case (1) &#123;
+                <br>
+                &lt;p&gt;La valeur est 1&lt;/p&gt;
+                <br>
+                &#125;
+                <br>
+                &#64;case (5) &#123;
+                <br>
+                &lt;p&gt;La valeur est 5&lt;/p&gt;
+                <br>
+                &#125;
+                <br>
+                &#64;default &#123;
+                <br>
+                &lt;p&gt;La valeur n' est ni 1 ni 5&lt;/p&gt;
+                <br>
+                &#125;
+                <br>
+                &#125;
+            </code></span>
         </div>
     </div>
 
     <div class="card w-75 p-3 m-auto mt-3">
         <p> La Directive For très utilisé , permet de repeter un bloc pour un ensemble d'éléments ( array[])</p>
 
-        <div *ngFor="let user of listUsers"></div>
+        <h4>Ancienne version</h4>
+        <span><code>
+            &lt;div *ngFor="let user of listUsers"&gt;
+            <br>
+            &lt;h5&gt;Email : &#123; &#123;user.email &#125; &#125; &lt;/h5&gt;
+            <br>
+            &lt;p&gt;Password : &#123; &#123;user.password &#125; &#125; &lt;/p&gt;
+            <br>
+            &lt;p&gt;age : &#123; &#123;user.age &#125; &#125; &lt;/p&gt;
+            <br>
+            &lt;p&gt;id :&#123; &#123;user.id&#125; &#125;&lt;/p&gt;
+            <br>
+            &lt;button&gt;Details&lt;/button&gt;
+            <br>
+            &lt;/div&gt;
+        </code></span>
+        <p>
+         Track permet d'avoir un suivi des elements affichés
+         La methode transmet l'index de l'element selectionné
+         Le [class."nom_classe"] permet d'appliquer une classe en fonction d'une condition
+        </p>
+
+        <div class="card p-3 m-3">
+        <p>$index : l'index de l'element</p>
+        <p>$count : le nombre d'element dans la liste</p>
+        <p>$first : true si c'est le premier element</p>
+        <p>$last : true si c'est le dernier element</p>
+        <p>$even : true si l'index est pair</p>
+        <p>$odd : true si l'index est impair</p>
+    </div>
+    <div>
+        <h4>Utilisation du track </h4>
+        <p>ici on transmet l'index de l'element dans le for </p>
+        <span>
+            <code>
+                (mouseenter)="selectedProduct($index)"
+            </code>
+        </span>
+        <br>
+        <br>
+        <p>ici on applique la classe selected si la condition est remplie </p>
+        <span>
+            <code>
+                    [class.selected]="$index === selected"
+                </code>
+        </span>
+    </div>
 
         @for(user of listUsers;track user){
-            <!--
-             Track permet d'avoir un suivi des elements affichés
-             La methode transmet l'index de l'element selectionné
-             Le [class."nom_classe"] permet d'appliquer une classe en fonction d'une condition
-              -->
+            <p>selected : {{selected}}</p>
             <div
             class="card p-3 m-3" 
             (mouseenter)="selectedProduct($index)"
             [class.selected]="$index === selected"
             >
-                <p>$Count = {{ $count }}</p>
-                <p>$index = {{ $index }}</p>
-                <p>$first = {{ $first }}</p>
-                <p>$last = {{ $last }}</p>
-                <p>$even = {{ $even}}</p>
-                <p>$odd = {{ $odd }}</p>
             <div>
                 <h5>Email :{{user.email}}</h5>
                 <p>Password :{{ user.password }}</p>
@@ -149,10 +258,15 @@
         <p>Il prend en paramètre une classe et un booleen qui permet d'appliquer ou non la classe definis</p>
         <p>Un import est nécessaire : <strong>NgClass</strong></p>
         
+        <span>
+            <code>
+                &lt;p [ngClass]="&#123;'ma-classe' : booleen&#125;"&gt;Voici un texte &lt;/p&gt;
+            </code>
+        </span>
+        <br>
         <p [ngClass]="{'monStyle' : styleActif}">Voici un texte </p>
         <button (click)="toggleStyle()" (mouseenter)="toggleStyle()" (mouseleave)="toggleStyle()">change</button>
     
-        <!-- <code><p [ngClass]="{'la classe' : booleen }"></p></code> -->
     </div>
 </div>
 
@@ -164,6 +278,12 @@
         <p>Il prend en paramètre une methode</p>
         <p>Un import est nécessaire : <strong>NgStyle</strong></p>
         
+        <span>
+            <code>
+                &lt;p [ngStyle]="getStyles()"&gt;Voici un texte &lt;/p&gt;
+            </code>
+        </span>
+        <br>
         <p [ngStyle]="getStyles()">Voici un texte </p>
         <button (click)="toggleStyleActif()" >change</button>
     
