@@ -1,7 +1,6 @@
 import { NgClass, NgFor, NgIf,NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { User } from '../../../../models/user.model';
-import { NgbAccordionItem } from "@ng-bootstrap/ng-bootstrap";
 
 
 @Component({
@@ -11,7 +10,6 @@ import { NgbAccordionItem } from "@ng-bootstrap/ng-bootstrap";
     NgFor,
     NgClass,
     NgStyle,
-    NgbAccordionItem
 ],
   templateUrl: './directive-component.html',
   styleUrl: './directive-component.css'

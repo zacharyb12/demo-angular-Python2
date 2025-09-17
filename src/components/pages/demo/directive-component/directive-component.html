@@ -49,7 +49,9 @@
             <br>
             &#125;
         </code></span>
-
+        @if(isVisible){
+        <p>{{ message }}</p>
+        }
         <button (click)="toggleVisibility()">Show</button>
     </div>
 
@@ -67,8 +69,11 @@
             &lt;ul&gt;
             <br>
             &lt;li&gt;Gestion Utilisateurs&lt;/li&gt;
+            <br>
             &lt;li&gt;Gestion Produits&lt;/li&gt;
+            <br>
             &lt;li&gt;Gestion Commande&lt;/li&gt;
+            <br>
             &lt;/ul&gt;
             <br>
             &#125;
