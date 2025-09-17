@@ -10,6 +10,7 @@ import { PipeComponent } from '../components/pages/demo/pipe-component/pipe-comp
 import { DirectiveComponent } from '../components/pages/demo/directive-component/directive-component';
 import { DirectivesExo1 } from '../components/pages/exercices/directives-exo1/directives-exo1';
 import { DirectivesExo2 } from '../components/pages/exercices/directives-exo2/directives-exo2';
+import { ParentComponent } from '../components/pages/demo/Input-Output/parent-component/parent-component';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -17,7 +18,8 @@ export const routes: Routes = [
         {path : 'bindings' , component : Bindings},
         {path : 'bootstrap' , component : Bootstrap},
         {path : 'pipes' , component : PipeComponent},
-        {path : 'directives' , component : DirectiveComponent}
+        {path : 'directives' , component : DirectiveComponent},
+        {path : 'input-output' , component : ParentComponent}
     ]},
     {path : 'exo' , component : ExoRouting , children : [ 
         {path : 'compteur' , component : CompteurComponent},
