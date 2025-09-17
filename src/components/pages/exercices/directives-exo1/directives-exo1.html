@@ -1,1 +1,38 @@
-<p>directives-exo1 works!</p>
+<div class="card w-75 m-auto p-3">
+
+    <h1 class="text-center">Products</h1>
+
+
+        <div class="card w-75 m-auto p-3">
+            <!-- cette directive gère l'affichage de la liste ou du message -->
+            @if(productEmpty.length !== 0){
+                <!-- Afficher la liste des produits -->
+                @for (p of productEmpty; track $index) {
+
+                    <!-- Si le produit est en promo, on ajoute une classe -->
+                    @if(p.promo){
+                    <div class="card shadow m-3 bg-danger">
+                        <h5>{{ p.name }}</h5>
+                        <p>{{ p.description }}</p>
+                        <p>{{p.price}}€ | {{p.quantity}}pc</p>
+                            <p>Promotion en cours </p>
+                        </div>
+                    }
+                    <!-- Sinon On affiche le style normal -->
+                    @else {
+                        <div class="card shadow m-3">
+                        <h5>{{ p.name }}</h5>
+                        <p>{{ p.description }}</p>
+                        <p>{{p.price}}€ | {{p.quantity}}pc</p>
+                        </div>
+                    }
+                }
+            }
+            <!-- Et ici le message afficher si la liste est vide -->
+            @else {
+                <p>{{message}}</p>
+            }
+                
+        </div>
+    
+</div>

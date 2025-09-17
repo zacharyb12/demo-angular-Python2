@@ -1,13 +1,12 @@
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { User } from '../../../../models/user.model';
-import { Bootstrap } from "../bootstrap/bootstrap";
-import { ProductDetails } from "../../exercices/product-details/product-details";
 
 @Component({
   selector: 'app-directive-component',
   imports: [
-    NgIf
+    NgIf,
+    NgFor
 ],
   templateUrl: './directive-component.html',
   styleUrl: './directive-component.css'

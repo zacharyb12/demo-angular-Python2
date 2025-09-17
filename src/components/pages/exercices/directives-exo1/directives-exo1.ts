@@ -1,23 +1,35 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductNew } from '../../../../models/product-new.model';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-directives-exo1',
-  imports: [],
+  imports: [
+    CurrencyPipe
+  ],
   templateUrl: './directives-exo1.html',
   styleUrl: './directives-exo1.css'
 })
-export class DirectivesExo1 {
+export class DirectivesExo1 implements OnInit{
   // Afficher la liste après un delai de x secondes
   // utiliser la methode delay() qui prend en parametre le nombre de millisecondes
-
+  
   // Afficher un message si la liste est vide
   // if else
+    
+    // methode qui envoie les données dans la liste 
+    // declencher le methode qui envoie les données dans la liste principale
+    
+  ngOnInit(): void {
+     setTimeout(()=> {
+      this.insertList();
+     },3000)
+      
+    }
+    
+message : string = "La liste est vide";
 
-  // methode qui envoie les données dans la liste 
-  // declencher le methode qui envoie les données dans la liste principale
-
-
-productPage : ProductNew[] = [];
+productEmpty : ProductNew[] = [];
 
   products : ProductNew[] = [
     {
@@ -184,14 +196,8 @@ productPage : ProductNew[] = [];
 
   }
 ]
-}
 
-      export interface ProductNew {
-          id: number;
-          name: string;
-          price: number;
-          description: string;
-          note : number;
-          quantity : number;
-          promo : boolean;
-      }
+insertList(){
+    this.productEmpty = this.products;
+}
+}
