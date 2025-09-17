@@ -11,6 +11,7 @@
 
                     <!-- Si le produit est en promo, on ajoute une classe -->
                     @if(p.promo){
+                        
                     <div class="card shadow m-3 bg-danger">
                         <h5>{{ p.name }}</h5>
                         <p>{{ p.description }}</p>
@@ -21,6 +22,7 @@
                     <!-- Sinon On affiche le style normal -->
                     @else {
                         <div class="card shadow m-3">
+                            
                         <h5>{{ p.name }}</h5>
                         <p>{{ p.description }}</p>
                         <p>{{p.price}}€ | {{p.quantity}}pc</p>

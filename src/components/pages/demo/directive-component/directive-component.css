@@ -1,0 +1,10 @@
+.monStyle{
+    color: red;
+    background-color: black;
+    transform: scale(1.4);
+}
+.selected{
+    background-color: yellow;
+    transform: scale(1.2);
+    box-shadow: 10px 10px 5px black;
+}

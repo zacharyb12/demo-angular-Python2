@@ -15,7 +15,7 @@ export class Bindings implements OnInit,OnDestroy {
 
 
   users : User[] = []
-  user : User = { password: 'John Doe', email: 'john.doe@example.com', age: 30,isAdmin: false}
+  user : User = { id : 1, password: 'John Doe', email: 'john.doe@example.com', age: 30,isAdmin: false}
 
   // binding One-way
   value : number = 1;
@@ -39,7 +39,7 @@ export class Bindings implements OnInit,OnDestroy {
 constructor(){
   console.log("home component initialized Constructeur");
 
-  this.users.push({ password: 'John Doe', email: 'john.doe@example.com', age: 30,isAdmin: false});
+  this.users.push({ id:2, password: 'John Doe', email: 'john.doe@example.com', age: 30,isAdmin: false});
 
 }
 

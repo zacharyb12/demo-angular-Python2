@@ -16,6 +16,7 @@ import { FooterComponent } from "../components/shared/footer-component/footer-co
 export class App {
 
 monUser : User = {
+  id : 1,
 email : "",
 password : "",
 age : 0,
@@ -74,6 +75,7 @@ listeUser : User[] = [];
 
 // objet propre a la classe App utilisable dans et en dehors des methodes de la classe
 userClasse : User = {
+  id : 1,
 email : "",
 password : "",
 age : 0,

@@ -35,6 +35,7 @@ myCurrency = 2999.956;
 myDate = new Date();
 
 user : User = {
+  id: 1,
   password: 'john',
   isAdmin: true,
   age: 30,

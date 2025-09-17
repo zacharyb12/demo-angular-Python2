@@ -1,116 +1,172 @@
 <h1>Les Directives</h1>
 
-<div class="card w-75 p-3 m-auto">
+<div class="card w-75 m-auto p-3">
 
-    <p>
-        L'ancienne façon de faire necessite un import 
-</p>
-<div *ngIf="true">
-    <p>test 2</p>
-</div>
+    <h2 class="text-center mt-3 mb-3">Les directives structurelles</h2>
 
-<p>
-    La nouvelle façon de faire ne necessite pas d' import 
-</p>
-@if(true){
-<p>test 1</p>
-}
-</div>
+    <div class="">
+    <p>Permet d'afficher ou masquer un element , ou de repeter un affichage sur base d'une liste </p>
+    </div>
 
-<div class="card w-75 p-3 m-auto mt-3">
-    <p>La directive If permet de définir si on affiche quelque chose ou pas </p>
+    <div class="card w-75 p-3 m-auto">
 
-    @if(isVisible){
-
-    <p>{{ message }}</p>
-    }
-
-    <button (click)="toggleVisibility()">Show</button>
-</div>
-
-
-<div class="card w-75 p-3 m-auto mt-3">
-
-    <p>
-        La directive If permet de gerer l'affichage en fonction d'une valeur booleen 
-        comme le role d'un user === 'admin'
+        <p>
+            L'ancienne façon de faire necessite un import 
     </p>
-        @if(user.isAdmin){
-
-            <ul>
-                <li>Gestion Utilisateurs</li>
-                <li>Gestion Produits</li>
-                <li>Gestion Commande</li>
-            </ul>
-        }
-</div>
-
-<div class="card w-75 p-3 m-auto mt-3">
-    <p>La directive Else permet de definir ce qui sera afficher si le if renvoie false</p>
-
-    <div class="card w-75 p-3 m-auto mt-3">
-        <p>L 'ancienne methode comprend un bloc qui contient une directive " *ngIf="true; else elseBlock" "</p>
-        <p>et un block Else " #elseBlock "</p>
-        <h5>If else Old</h5>
-
-
-        <div *ngIf="true; else elseBlock" >
-            <p>Le message est visible si la condition du if est remplie</p>
-        </div>
-        
-        <ng-template #elseBlock>
-            <p>Le message est visible si la condition du if n' est pas remplie</p>
-        </ng-template>
-
-
-        
-
+    <div *ngIf="true">
+        <p>test 2</p>
     </div>
 
-    <div class="card w-75 p-3 m-auto mt-3">
-        <p>La nouvelle methode comprend un bloc If et un bloc Else</p>
-        <p>Elle ne necessite pas d' import  et permet d'avoir plusieurs bloc If ( en fonction de la condition ) </p>
-        <h5>If else New</h5>
-
-        @if(true){
-            <p>Le message est visible si la condition du if est remplie</p>
-        }
-        @else {
-            <p>Le message est visible si la condition du if n' est pas remplie</p>
-        }
-
-    </div>
-
-    <div>
-        <p>La nouvelle methode comprend un bloc Switch</p>
-        <p>Elle utilise une valeur en parametres et comprend un bloc Default</p>
-        @switch (myValue) {
-            @case (1) {
-                <p>La valeur est 1</p>
-            }
-            @case (5) {
-                <p>La valeur est 5</p>
-            }
-            @default {
-                <p>La valeur n' est ni 1 ni 5</p>
-            }
-        }
-
-    </div>
-</div>
-
-<div class="card w-75 p-3 m-auto mt-3">
-    <p> La Directive For très utilisé , permet de repeter un bloc pour un ensemble d'éléments ( array[])</p>
-
-    <div *ngFor="let user of listUsers"></div>
-
-    @for(user of listUsers;track user.age){
-        <div>
-            <h5>{{user.email}}</h5>
-            <p>{{ user.password }}</p>
-            <h5>{{user.age}}</h5>
-            <button>Details</button>
-        </div>
+    <p>
+        La nouvelle façon de faire ne necessite pas d' import 
+    </p>
+    @if(true){
+    <p>test 1</p>
     }
- 
+    </div>
+
+    <div class="card w-75 p-3 m-auto mt-3">
+        <p>La directive If permet de définir si on affiche quelque chose ou pas </p>
+
+        @if(isVisible){
+
+        <p>{{ message }}</p>
+        }
+
+        <button (click)="toggleVisibility()">Show</button>
+    </div>
+
+
+    <div class="card w-75 p-3 m-auto mt-3">
+
+        <p>
+            La directive If permet de gerer l'affichage en fonction d'une valeur booleen 
+            comme le role d'un user === 'admin'
+        </p>
+            @if(user.isAdmin){
+
+                <ul>
+                    <li>Gestion Utilisateurs</li>
+                    <li>Gestion Produits</li>
+                    <li>Gestion Commande</li>
+                </ul>
+            }
+    </div>
+
+    <div class="card w-75 p-3 m-auto mt-3">
+        <p>La directive Else permet de definir ce qui sera afficher si le if renvoie false</p>
+
+        <div class="card w-75 p-3 m-auto mt-3">
+            <p>L 'ancienne methode comprend un bloc qui contient une directive " *ngIf="true; else elseBlock" "</p>
+            <p>et un block Else " #elseBlock "</p>
+            <h5>If else Old</h5>
+
+
+            <div *ngIf="true; else elseBlock" >
+                <p>Le message est visible si la condition du if est remplie</p>
+            </div>
+            
+            <ng-template #elseBlock>
+                <p>Le message est visible si la condition du if n' est pas remplie</p>
+            </ng-template>
+
+
+        </div>
+
+        <div class="card w-75 p-3 m-auto mt-3">
+            <p>La nouvelle methode comprend un bloc If et un bloc Else</p>
+            <p>Elle ne necessite pas d' import  et permet d'avoir plusieurs bloc If ( en fonction de la condition ) </p>
+            <h5>If else New</h5>
+
+            @if(true){
+                <p>Le message est visible si la condition du if est remplie</p>
+            }
+            @else {
+                <p>Le message est visible si la condition du if n' est pas remplie</p>
+            }
+
+        </div>
+
+        <div class="card w-75 p-3 m-auto mt-3">
+            <p>La nouvelle methode comprend un bloc Switch</p>
+            <p>Elle utilise une valeur en parametres et comprend un bloc Default</p>
+            @switch (myValue) {
+                @case (1) {
+                    <p>La valeur est 1</p>
+                }
+                @case (5) {
+                    <p>La valeur est 5</p>
+                }
+                @default {
+                    <p>La valeur n' est ni 1 ni 5</p>
+                }
+            }
+
+        </div>
+    </div>
+
+    <div class="card w-75 p-3 m-auto mt-3">
+        <p> La Directive For très utilisé , permet de repeter un bloc pour un ensemble d'éléments ( array[])</p>
+
+        <div *ngFor="let user of listUsers"></div>
+
+        @for(user of listUsers;track user){
+            <!--
+             Track permet d'avoir un suivi des elements affichés
+             La methode transmet l'index de l'element selectionné
+             Le [class."nom_classe"] permet d'appliquer une classe en fonction d'une condition
+              -->
+            <div
+            class="card p-3 m-3" 
+            (mouseenter)="selectedProduct($index)"
+            [class.selected]="$index === selected"
+            >
+                <p>$Count = {{ $count }}</p>
+                <p>$index = {{ $index }}</p>
+                <p>$first = {{ $first }}</p>
+                <p>$last = {{ $last }}</p>
+                <p>$even = {{ $even}}</p>
+                <p>$odd = {{ $odd }}</p>
+            <div>
+                <h5>Email :{{user.email}}</h5>
+                <p>Password :{{ user.password }}</p>
+                <p>age : {{user.age}}</p>
+                <p>id :{{user.id}}</p>
+                <button>Details</button>
+            </div>
+        </div>
+        }
+    
+    </div>
+
+</div>
+
+<div class="card w-75 m-auto p-3 mt-3">
+    <h2 class="text-center">Ng Class Directive de style</h2>
+
+    <div class="card w-75 p-3 m-auto mt-3">
+        <p>NgClass permet d'ajouter ou de retirer des  classes css dynamiquement </p>
+        <p>Il prend en paramètre une classe et un booleen qui permet d'appliquer ou non la classe definis</p>
+        <p>Un import est nécessaire : <strong>NgClass</strong></p>
+        
+        <p [ngClass]="{'monStyle' : styleActif}">Voici un texte </p>
+        <button (click)="toggleStyle()" (mouseenter)="toggleStyle()" (mouseleave)="toggleStyle()">change</button>
+    
+        <!-- <code><p [ngClass]="{'la classe' : booleen }"></p></code> -->
+    </div>
+</div>
+
+<div class="card w-75 m-auto p-3 mt-3">
+    <h2 class="text-center">Ng Style Directive de style</h2>
+
+    <div class="card w-75 p-3 m-auto mt-3">
+        <p>NgStyle permet d'appliquer des styles CSS dynamiquement</p>
+        <p>Il prend en paramètre une methode</p>
+        <p>Un import est nécessaire : <strong>NgStyle</strong></p>
+        
+        <p [ngStyle]="getStyles()">Voici un texte </p>
+        <button (click)="toggleStyleActif()" >change</button>
+    
+        <!-- <code><p [ngClass]="{'la classe' : booleen }"></p></code> -->
+    </div>
 </div>
