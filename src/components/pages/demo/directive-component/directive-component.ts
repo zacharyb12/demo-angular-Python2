@@ -1,6 +1,7 @@
 import { NgClass, NgFor, NgIf,NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { User } from '../../../../models/user.model';
+import { ZoomPerso } from '../../../../core/directives/zoomPerso/zoom-perso';
 
 
 @Component({
@@ -10,11 +11,14 @@ import { User } from '../../../../models/user.model';
     NgFor,
     NgClass,
     NgStyle,
+    ZoomPerso
 ],
   templateUrl: './directive-component.html',
   styleUrl: './directive-component.css'
 })
 export class DirectiveComponent {
+
+
 // Les directives vont Permettre de gérer le DOM
 
 isVisible : boolean = false;
@@ -53,14 +57,14 @@ listUsers : User[] = [
     isAdmin : false
   },
     {
-      id : 1,
+      id : 2,
     email : "jane.doe@example.com",
     password : "password123",
     age : 30,
     isAdmin : false
   },
     {
-      id : 1,
+      id : 3,
     email : "johnny.doe@example.com",
     password : "password123",
     age : 30,

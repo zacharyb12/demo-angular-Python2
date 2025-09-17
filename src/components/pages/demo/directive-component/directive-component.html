@@ -1,5 +1,6 @@
 <h1 class="text-center mt-5 mb-5">Les Directives</h1>
 
+
 <div class="card w-100 m-auto p-3">
 
     <h2 class="text-center mt-3 mb-3">Les directives structurelles</h2>
@@ -202,6 +203,24 @@
             <br>
             &lt;/div&gt;
         </code></span>
+
+        <h4>Nouvelle Version</h4>
+        <span><code>
+            
+            &#64;for(user of listUsers;track user)&#123;
+            <br>
+            &lt;h5&gt;Email : &#123; &#123;user.email &#125; &#125; &lt;/h5&gt;
+            <br>
+            &lt;p&gt;Password : &#123; &#123;user.password &#125; &#125; &lt;/p&gt;
+            <br>
+            &lt;p&gt;age : &#123; &#123;user.age &#125; &#125; &lt;/p&gt;
+            <br>
+            &lt;p&gt;id :&#123; &#123;user.id&#125; &#125;&lt;/p&gt;
+            <br>
+            &lt;button&gt;Details&lt;/button&gt;
+            <br>
+            &#125;
+        </code></span>
         <p>
          Track permet d'avoir un suivi des elements affichés
          La methode transmet l'index de l'element selectionné
@@ -236,17 +255,19 @@
 
         @for(user of listUsers;track user){
             <p>selected : {{selected}}</p>
+
             <div
-            class="card p-3 m-3" 
+            class="card p-3 m-3 " 
             (mouseenter)="selectedProduct($index)"
             [class.selected]="$index === selected"
             >
+            
             <div>
                 <h5>Email :{{user.email}}</h5>
                 <p>Password :{{ user.password }}</p>
                 <p>age : {{user.age}}</p>
                 <p>id :{{user.id}}</p>
-                <button>Details</button>
+                <button (click)="details(user.id)">Details</button>
             </div>
         </div>
         }
@@ -293,5 +314,24 @@
         <button (click)="toggleStyleActif()" >change</button>
     
         <!-- <code><p [ngClass]="{'la classe' : booleen }"></p></code> -->
+    </div>
+</div>
+
+<div class="card w-75 m-auto p-3 mt-3">
+    <h4>Directives Perso</h4>
+
+    <div class="card w-25 p-3 m-auto mt-3" ZoomPerso>
+
+        <p>ZoomPerso</p>
+    </div>
+
+        <div class="card w-25 p-3 m-auto mt-3" ZoomPerso>
+
+        <p>ZoomPerso</p>
+    </div>
+
+        <div class="card w-25 p-3 m-auto mt-3" ZoomPerso>
+
+        <p>ZoomPerso</p>
     </div>
 </div>

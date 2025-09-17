@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductNew } from '../../../../models/product-new.model';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-directives-exo2',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './directives-exo2.html',
-  styleUrl: './directives-exo2.css'
+  styleUrl: './directives-exo2.css',
+
 })
 export class DirectivesExo2 implements OnInit {
 
@@ -111,7 +113,7 @@ productsEmpty : ProductNew[] = [];
     price: 75,
     description: 'Description for Product 9',
     note: 4.0,
-    quantity: 25,
+    quantity: 0,
     promo: true
   },
   {
@@ -198,7 +200,21 @@ productsEmpty : ProductNew[] = [];
   }
 ]
 
+// -------------------------------------------------
+// Exemple avec Ngclass Un seul booleen 
+// toutes les div changent de style en meme temps
+// isHover : boolean = false;
 
+// toggleIsHover(){
+  //   this.isHover = !this.isHover;
+  // }
+  // -------------------------------------------------
+  
+selected : number = -1;
+
+setSelected(index : number){
+this.selected = index;
+}
 // methode qui applique un style : methode
 
 // au survol appliquer le style : index === selected
@@ -210,8 +226,11 @@ productsEmpty : ProductNew[] = [];
 
 // afficher la liste avec un delai , et un message de chargement 
 
+
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    setTimeout(() => {
+      this.productsEmpty = this.products;
+    },3000);
   }
 
 }

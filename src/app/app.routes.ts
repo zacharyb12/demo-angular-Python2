@@ -9,6 +9,7 @@ import { Bootstrap } from '../components/pages/demo/bootstrap/bootstrap';
 import { PipeComponent } from '../components/pages/demo/pipe-component/pipe-component';
 import { DirectiveComponent } from '../components/pages/demo/directive-component/directive-component';
 import { DirectivesExo1 } from '../components/pages/exercices/directives-exo1/directives-exo1';
+import { DirectivesExo2 } from '../components/pages/exercices/directives-exo2/directives-exo2';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -21,7 +22,8 @@ export const routes: Routes = [
     {path : 'exo' , component : ExoRouting , children : [ 
         {path : 'compteur' , component : CompteurComponent},
         {path : 'product' , component : ProductDetails},
-        {path : 'directives-exo1' , component : DirectivesExo1}
+        {path : 'directives-exo1' , component : DirectivesExo1},
+        {path : 'directives-exo2' , component : DirectivesExo2}
     ]}
 ];
 

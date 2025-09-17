@@ -1,1 +1,27 @@
 
+<h1 class="card w-50 m-auto p-3 mt-5 mb-3 text-center">Directives : Exo 2</h1>
+
+
+<div class="card w-auto m-auto p-3 mb-3">
+@if(productsEmpty.length === 0){
+    <p>Loading . . .</p>
+}
+@else {
+
+
+
+    @for(p of productsEmpty;track p){
+        
+        <div 
+        (mouseover)="setSelected($index)"
+        (mouseleave)="setSelected(-1)"
+        [class.styleDemo]="selected === $index"
+        class="card p-3 m-5">
+            <h5>{{p.name}}</h5>
+            <p>{{p.description}}</p>
+            <p [ngClass]="{'promotion' : p.promo}">{{p.price}}€ - {{p.note}}</p>
+        </div>
+
+    }
+}
+</div>

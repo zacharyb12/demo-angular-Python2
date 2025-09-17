@@ -1,0 +1,10 @@
+.styleDemo{
+    transform: scale(1.1);
+    box-shadow: 10px 10px 20px black;
+}
+
+.promotion{
+    color:  red;
+    font-size: x-large;
+    font-weight: bolder;
+}
