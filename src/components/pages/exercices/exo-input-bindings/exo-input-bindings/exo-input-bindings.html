@@ -7,4 +7,16 @@
 
 <p>gestion de l'affichage de la liste dans le composant enfant </p>
 
-<p>Ajouter un boutton pour modifier le status de l'element et modifier la couleur en fonction du status</p>
+
+<div>
+    <input type="text" [(ngModel)]="title">
+    <input type="text" [(ngModel)]="description">
+
+    <button (click)="addTodo()" >Add</button>
+</div>
+
+<app-exo-input-bindings-enfant
+[listTodo]="listTodoParent"
+(emmeteur)="removeTodoParent($event)"
+(emmeteurStatus)="changeStatus($event)"
+></app-exo-input-bindings-enfant>
