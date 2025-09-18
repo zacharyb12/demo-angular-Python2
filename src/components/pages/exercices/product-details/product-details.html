@@ -1,9 +1,10 @@
 <div class="card w-50 m-auto p-3 mt-5 mb-5 shadow">
+@if(product){
 
-<div class="text-center mt-3 mb-3">
+    <div class="text-center mt-3 mb-3">
         <!-- titre -->
-    <h1>{{product.name}}</h1>
-</div>
+        <h1>{{product.name}}</h1>
+    </div>
 
 <div class="d-flex m-auto justify-content-evenly mt-3 mb-3">
     <div class="w-50 card p-3">
@@ -15,11 +16,11 @@
     </div>
 </div>
 
-    <div class="d-flex justify-content-evenly">
-         <button class="btn btn-sm btn-outline-warning m-3">addCart</button>
-         <button class="btn btn-sm btn-outline-primary m-3">Review</button>
+<div class="d-flex justify-content-evenly">
+    <button class="btn btn-sm btn-outline-warning m-3">addCart</button>
+    <button class="btn btn-sm btn-outline-primary m-3">Review</button>
     </div>
-
+    
 
     <div class="d-flex justify-content-evenly ">
         <!-- informations -->
@@ -27,4 +28,9 @@
         <p class="mt-auto mb-1"> id : {{product.id}}</p>
 
     </div>
+}
+@else {
+    <h1>Aucun produit disponible</h1>
+}
+
 </div>

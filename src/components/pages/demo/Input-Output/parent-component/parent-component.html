@@ -10,11 +10,19 @@
 ></app-enfant-component>
 
 
-       <!-- modification du composant productdetails pour utiliser le decorateur @Input afin de transmettre les valeurs necéssaires -->
+<!-- modification du composant productdetails pour utiliser le decorateur @Input afin de transmettre les valeurs necéssaires -->
 
-       <!-- Ici on appelle le composant enfant et on lui transmet des valeurs depuis le parent -->
+<!-- Ici on appelle le composant enfant et on lui transmet des valeurs depuis le parent -->
 
-       <!-- Utilisation d'une boucle for pour utiliser le Composant productDetails afin de repeter l'affichage du produit -->
+<!-- Utilisation d'une bouproductParentcle for pour utiliser le Composant productDetails afin de repeter l'affichage du produit -->
+
+<h1>Sand params</h1>
+<app-product-details></app-product-details>
+<h1>For</h1>
+@for(p of productParentList;track p){
+<app-product-details [product]="p"></app-product-details>
+}
+
 
 </div>
        

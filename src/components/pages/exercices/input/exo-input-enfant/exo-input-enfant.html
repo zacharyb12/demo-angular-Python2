@@ -1,0 +1,12 @@
+<p>exo-input-enfant works!</p>
+
+@if(valeurEnfant.length > 0){
+
+    @for(message of valeurEnfant;track message){
+        <p>{{message}}</p>
+    }
+}
+@else {
+    <p>Pas de message</p>
+}
+

@@ -1,18 +1,21 @@
 import { Component } from '@angular/core';
 import { EnfantComponent } from '../enfant-component/enfant-component';
 import { Product } from '../../../../../models/product.model';
+import { ProductDetails } from "../../../exercices/product-details/product-details";
 
 @Component({
   selector: 'app-parent-component',
   imports: [
-    EnfantComponent
-  ],
+    EnfantComponent,
+    ProductDetails
+],
   templateUrl: './parent-component.html',
   styleUrl: './parent-component.css'
 })
 export class ParentComponent {
 
   title : string = "Je suis le parent";
+
 
   productParentList : Product[]= [ 
   {

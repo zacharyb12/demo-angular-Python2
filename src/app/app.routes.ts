@@ -11,7 +11,8 @@ import { DirectiveComponent } from '../components/pages/demo/directive-component
 import { DirectivesExo1 } from '../components/pages/exercices/directives-exo1/directives-exo1';
 import { DirectivesExo2 } from '../components/pages/exercices/directives-exo2/directives-exo2';
 import { ParentComponent } from '../components/pages/demo/Input-Output/parent-component/parent-component';
-import { ExoInput } from '../components/pages/exercices/exo-input/exo-input';
+import { ExoInput } from '../components/pages/exercices/input/exo-input/exo-input';
+import { ExoInputBindings } from '../components/pages/exercices/exo-input-bindings/exo-input-bindings/exo-input-bindings';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -27,7 +28,8 @@ export const routes: Routes = [
         {path : 'product' , component : ProductDetails},
         {path : 'directives-exo1' , component : DirectivesExo1},
         {path : 'directives-exo2' , component : DirectivesExo2},
-        {path : 'input-output1' , component : ExoInput}
+        {path : 'input-output1' , component : ExoInput},
+        {path : 'input-output-bindings' , component : ExoInputBindings},
     ]}
 ];
 
