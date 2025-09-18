@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Product } from '../../../../../models/product.model';
 
 @Component({
   selector: 'app-enfant-component',
@@ -11,6 +12,6 @@ export class EnfantComponent {
   // Input Permet de recevoir une donnée du parent
 
   @Input() value : string = "voici la valeur";
-  @Input() toto : string = "voici la valeur";
-  @Input() value2 : string = "voici la valeur";
+
+
 }

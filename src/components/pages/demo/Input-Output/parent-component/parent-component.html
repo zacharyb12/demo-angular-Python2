@@ -4,10 +4,17 @@
 
 <div class="card shadow w-75 mt-3 m-auto">
 
-       <app-enfant-component
-       [value]="title"
-       [toto]="title"
-       [value2]="title"
-       ></app-enfant-component>
+
+<app-enfant-component
+[value]="title"
+></app-enfant-component>
+
+
+       <!-- modification du composant productdetails pour utiliser le decorateur @Input afin de transmettre les valeurs necéssaires -->
+
+       <!-- Ici on appelle le composant enfant et on lui transmet des valeurs depuis le parent -->
+
+       <!-- Utilisation d'une boucle for pour utiliser le Composant productDetails afin de repeter l'affichage du produit -->
 
 </div>
+       
