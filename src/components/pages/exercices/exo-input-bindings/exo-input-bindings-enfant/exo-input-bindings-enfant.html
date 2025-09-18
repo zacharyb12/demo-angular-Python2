@@ -1,9 +1,14 @@
-@for(t of listTodo;track t ){
-<p 
-[class.bg-danger]="!t.status"
-[class.bg-success]="t.status"
->{{t.title}}</p>
 
-<button (click)="removeTodoEnfant(t.id)">Delete</button>
-<button (click)="changeStatus(t.id)">status</button>
+<div class=" p-3 bg-primary">
+
+    @for(t of listTodo;track t ){
+                <p 
+        [class.bg-danger]="!t.status"
+        [class.bg-success]="t.status"
+        >{{t.title}}</p>
+
+        <button (click)="removeTodoEnfant(t.id)">Delete</button>
+        <button (click)="changeStatus(t.id)">status</button>
 }
+
+    </div>
