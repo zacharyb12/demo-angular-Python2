@@ -15,6 +15,8 @@
     <button (click)="addTodo()" >Add</button>
 </div>
 
+<!-- Input = [listTodo]="listTodoParent"  -->
+<!-- Ouptput = (emmeteur)="removeTodoParent($event)"  -->
 <app-exo-input-bindings-enfant
 [listTodo]="listTodoParent"
 (emmeteur)="removeTodoParent($event)"
