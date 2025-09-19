@@ -14,6 +14,9 @@ import { ParentComponent } from '../components/pages/demo/Input-Output/parent-co
 import { ExoInput } from '../components/pages/exercices/input/exo-input/exo-input';
 import { ExoInputBindings } from '../components/pages/exercices/exo-input-bindings/exo-input-bindings/exo-input-bindings';
 import { ContainerComponent } from '../components/pages/exercices/exo-input-double-liste/container-component/container-component';
+import { ListProductServ } from '../components/pages/demo/demo-service/list-product-serv/list-product-serv';
+import { DetailsProductServ } from '../components/pages/demo/demo-service/details-product-serv/details-product-serv';
+import { AddProductServ } from '../components/pages/demo/demo-service/add-product-serv/add-product-serv';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -22,7 +25,10 @@ export const routes: Routes = [
         {path : 'bootstrap' , component : Bootstrap},
         {path : 'pipes' , component : PipeComponent},
         {path : 'directives' , component : DirectiveComponent},
-        {path : 'input-output' , component : ParentComponent}
+        {path : 'input-output' , component : ParentComponent},
+        {path : 'serv-list-product' , component : ListProductServ},
+        {path : 'serv-details-product' , component : DetailsProductServ},
+        {path : 'serv-create-product' , component : AddProductServ},
     ]},
     {path : 'exo' , component : ExoRouting , children : [ 
         {path : 'compteur' , component : CompteurComponent},

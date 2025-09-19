@@ -1,0 +1,41 @@
+<h1>Create Product</h1>
+
+
+<div class="card p-3  text-center w-75">
+
+    <div>
+        <label for="">Name</label>
+        <br>
+        <input class="form-control" type="text" [(ngModel)]="product.name">
+    </div>
+
+    <div>
+        <label for="">Description</label>
+        <br>
+        <input class="form-control" type="text" [(ngModel)]="product.description">
+    </div>
+
+    <div>
+        <label for="">Price</label>
+        <br>
+        <input class="form-control" type="number" [(ngModel)]="product.price">
+    </div>
+
+    <div>
+        <label for="">Quantity</label>
+        <br>
+        <input class="form-control" type="number" [(ngModel)]="product.quantity">
+    </div>
+
+    <div>
+        <label for="">Image</label>
+        <br>
+        <input class="form-control" type="text" [(ngModel)]="product.imageUrl">
+        <img [src]="product.imageUrl" width="200" alt="">
+    
+    </div>
+
+
+    <button (click)="addProduct()">Create</button>
+
+</div>

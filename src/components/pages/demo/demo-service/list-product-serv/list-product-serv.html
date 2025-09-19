@@ -1,0 +1,6 @@
+<h1>Products list</h1>
+<button (click)="getProducts()">GetProducts</button>
+
+@for(p of ListProducts;track p){
+<p>{{p.name}}</p>
+}
