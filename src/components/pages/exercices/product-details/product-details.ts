@@ -15,7 +15,7 @@ export class ProductDetails {
     price: 0,
     description: "dfqsfgqgd",
     quantity: 0,
-    imageUrl: "e",
+    imageUrl: "https://cdn.pixabay.com/photo/2025/08/25/20/04/nature-9796816_1280.jpg",
     note : 0
 }
 

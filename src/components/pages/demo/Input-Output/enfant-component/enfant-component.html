@@ -1,7 +1,23 @@
 <div class="card shadow w-75 m-auto text-center">
-
     <h4>Enfant</h4>
 
-    <p >{{value}}</p>
+    <div class="card w-75 m-auto p-3 mb-3 mt-3">
+        <p>valeur simple ancienne version</p>
+        <p >{{value}}</p>
+    </div>
+
+        <div class="card w-75 m-auto p-3 mb-3 mt-3">
+        <p>valeur signal nouvelle version</p>
+        <p>Il faut preciser les () pour afficher la valeur contenu dans le signal </p>
+        <p >{{valueNewVersion()}}</p>
+    </div>
+
+</div>
+
+<div class="card w-75 m-auto p-3">
+
+    @for(p of productListEnfant;track p){
+        {{p.name}}
+    }
 
 </div>

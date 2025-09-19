@@ -13,6 +13,7 @@ import { DirectivesExo2 } from '../components/pages/exercices/directives-exo2/di
 import { ParentComponent } from '../components/pages/demo/Input-Output/parent-component/parent-component';
 import { ExoInput } from '../components/pages/exercices/input/exo-input/exo-input';
 import { ExoInputBindings } from '../components/pages/exercices/exo-input-bindings/exo-input-bindings/exo-input-bindings';
+import { ContainerComponent } from '../components/pages/exercices/exo-input-double-liste/container-component/container-component';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -30,6 +31,7 @@ export const routes: Routes = [
         {path : 'directives-exo2' , component : DirectivesExo2},
         {path : 'input-output1' , component : ExoInput},
         {path : 'input-output-bindings' , component : ExoInputBindings},
+        {path : 'exo-input-list-product' , component : ContainerComponent},
     ]}
 ];
 

@@ -1,13 +1,26 @@
-<div class="card shadow w-75 m-auto">
+<div class="card shadow w-75 m-auto p-3 text-center">
 <h4>Parent : {{title}}</h4>
 </div>
 
 <div class="card shadow w-75 mt-3 m-auto">
+    <h1 class="text-center mt-3 mb-3">Enfant affiche le message du parent</h1>
+    <h3>Uniquement un string : value avec le @Input()</h3>
+    <h3>Uniquement un string : valueNewVersion avec le input  string ()string</h3>
+    <app-enfant-component
+    [value]="title"
+    [valueNewVersion]="title"
+    ></app-enfant-component>
+<div>
 
-
-<app-enfant-component
-[value]="title"
-></app-enfant-component>
+    <div class="card shadow w-75 mt-3 m-auto">
+        <h1 class="text-center mt-3 mb-3">Enfant affiche la liste des produits</h1>
+        <h3>Liste de produits @Input()</h3>
+        <app-enfant-component
+        [productListEnfant]="productParentList"
+        (remove)="removeProduct($event)"
+        (removeNew)="removeProduct($event)"
+        ></app-enfant-component>
+    </div>
 
 
 <!-- modification du composant productdetails pour utiliser le decorateur @Input afin de transmettre les valeurs necéssaires -->
@@ -16,12 +29,19 @@
 
 <!-- Utilisation d'une bouproductParentcle for pour utiliser le Composant productDetails afin de repeter l'affichage du produit -->
 
-<h1>Sand params</h1>
-<app-product-details></app-product-details>
-<h1>For</h1>
-@for(p of productParentList;track p){
-<app-product-details [product]="p"></app-product-details>
-}
+    <div class="card  m-auto p-3 mb-3 mt-3">
+        <h1 class="text-center mt-3 mb-3">Sans params</h1>
+        <app-product-details></app-product-details>
+    </div>
+
+
+<div class="card shadow m-auto p-3 mb-3">
+    <h1 class="text-center mt-3 mb-3">For</h1>
+    @for(p of productParentList;track p){
+        <app-product-details [product]="p"></app-product-details>
+    }
+    </div>
+</div>
 
 
 </div>
