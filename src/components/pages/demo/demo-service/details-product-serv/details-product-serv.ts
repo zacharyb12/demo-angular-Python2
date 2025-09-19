@@ -28,4 +28,9 @@ getProducts(){
   }
 }
 
+
+deleteProduct(id : number){
+  this.monService.delete(id);
+}
+
 }

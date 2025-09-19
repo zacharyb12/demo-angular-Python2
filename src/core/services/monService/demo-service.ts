@@ -98,4 +98,8 @@ const product : Product = {
 this.listProducts.push(product);
 }
 
+delete(id : number){
+  this.listProducts = this.listProducts.filter(p => p.id !== id);
+}
+
 }
