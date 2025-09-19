@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, output } from '@angular/core';
+import { Product } from '../../../../../models/product.model';
 
 @Component({
   selector: 'product-list',
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class ProductListComponent {
 
+listProduct = input.required<Product[]>();
+
+addEmmiter = output<number>();
+
+addProduct(id : number){
+  this.addEmmiter.emit(id);
+}
 }

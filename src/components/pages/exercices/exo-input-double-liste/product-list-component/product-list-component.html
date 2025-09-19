@@ -1,1 +1,6 @@
-<p>product-list-component works!</p>
+<h1>ProductList</h1>
+
+@for(p of listProduct();track p){
+<p>{{p.name}}</p>
+<button (click)="addProduct(p.id)">add</button>
+}

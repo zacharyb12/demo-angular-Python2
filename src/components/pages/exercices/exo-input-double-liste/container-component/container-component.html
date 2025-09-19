@@ -5,13 +5,21 @@
 <p>Bonus : gestion des quantités dans la liste utilisateur</p>
 <p>Bonus : ajout d'un element dans la liste des elements</p>
 
-<div class="d-flex">
+<div class="d-flex justify-content-evenly">
 
-        <div class="w-50 text-center">
-            <product-list></product-list>
-        </div>
-
-        <div class="w-50 text-center">
-            <user-list></user-list>
-        </div>
+    <div>
+        <product-list
+        [listProduct]="listProduct"
+        (addEmmiter)="addProductToUserList($event)"
+        
+        ></product-list>
+    </div>
+    <div>
+        <user-list
+        [listProductUser]="ListUser"
+        (incrementEmitter)="incrementQuantityParent($event)"
+        (decrementEmitter)="decrementQuantityParent($event)"
+        (removeEmitter)="removeProductFromUserList($event)"
+        ></user-list>
+    </div>
 </div>
