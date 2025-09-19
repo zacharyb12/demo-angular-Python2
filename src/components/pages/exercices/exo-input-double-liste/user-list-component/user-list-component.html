@@ -1,13 +1,20 @@
 <h1>user-list</h1>
 
-@if(listProductUser().length > 0){
+<div class="card p-3 m-auto">
 
+    @if(listProductUser().length > 0){
+        
         @for(p of listProductUser();track p){
-            <p>{{p.product.name}} - {{p.quantity}}</p>
-            <button (click)="incrementQuantity(p.product.id)">+</button>
-            <button (click)="decrementQuantity(p.product.id)">-</button>
-            <button (click)="removeProduct(p.product.id)">Remove</button>
+            <div class="card p-2  m-auto">
+                <p>{{p.product.name}} - {{p.quantity}}</p>
+                <div class="d-flex">
+                    <button class="btn btn-outline-success m-2" (click)="incrementQuantity(p.product.id)">+</button>
+                    <button class="btn btn-outline-warning m-2" (click)="decrementQuantity(p.product.id)">-</button>
+                    <button class="btn btn-outline-danger m-2" (click)="removeProduct(p.product.id)">Remove</button>
+                </div>
+            </div>
         }
 }@else{
     <p>La liste est vide</p>
 }
+    </div>

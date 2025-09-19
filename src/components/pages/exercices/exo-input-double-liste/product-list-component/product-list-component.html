@@ -1,6 +1,10 @@
 <h1>ProductList</h1>
 
-@for(p of listProduct();track p){
-<p>{{p.name}}</p>
-<button (click)="addProduct(p.id)">add</button>
-}
+<div class="card p-3">
+    @for(p of listProduct();track p){
+        <div class="card p-2 m-auto w-75 mt-2">
+            <p>{{p.name}}</p>
+            <button class="btn btn-outline-primary" (click)="addProduct(p.id)">add</button>
+        </div>
+    }
+</div>
