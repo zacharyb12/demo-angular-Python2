@@ -1,0 +1,33 @@
+<h1>Create Product</h1>
+
+
+<div>
+
+    <div>
+        <label for="">Nom</label>
+        <input type="text" [(ngModel)]="newProduct.name">
+    </div>
+
+        <div>
+        <label for="">Description</label>
+        <input type="text" [(ngModel)]="newProduct.description">
+    </div>
+
+        <div>
+        <label for="">Prix</label>
+        <input type="number" [(ngModel)]="newProduct.price">
+    </div>
+
+        <div>
+        <label for="">Quantité</label>
+        <input type="number" [(ngModel)]="newProduct.quantity">
+    </div>
+
+    <div>
+        <label for="">Image</label>
+        <input type="text" [(ngModel)]="newProduct.imageUrl">
+        <img [src]="newProduct.imageUrl" alt="aperçu image" width="100">
+    </div>
+
+    <button (click)="addProduct()">Ajouter</button>
+</div>

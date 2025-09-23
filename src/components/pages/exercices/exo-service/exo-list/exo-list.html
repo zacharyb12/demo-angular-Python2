@@ -1,0 +1,9 @@
+@for(product of productsList ; track product){
+<div>
+
+    {{ product.name }}
+    
+    <button (click)="deleteProduct(product.id)">Delete</button>
+</div>
+
+}

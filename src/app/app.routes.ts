@@ -17,6 +17,9 @@ import { ContainerComponent } from '../components/pages/exercices/exo-input-doub
 import { ListProductServ } from '../components/pages/demo/demo-service/list-product-serv/list-product-serv';
 import { DetailsProductServ } from '../components/pages/demo/demo-service/details-product-serv/details-product-serv';
 import { AddProductServ } from '../components/pages/demo/demo-service/add-product-serv/add-product-serv';
+import { ExoList } from '../components/pages/exercices/exo-service/exo-list/exo-list';
+import { ExoDetails } from '../components/pages/exercices/exo-service/exo-details/exo-details';
+import { ExoAdd } from '../components/pages/exercices/exo-service/exo-add/exo-add';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -38,6 +41,9 @@ export const routes: Routes = [
         {path : 'input-output1' , component : ExoInput},
         {path : 'input-output-bindings' , component : ExoInputBindings},
         {path : 'exo-input-list-product' , component : ContainerComponent},
+        {path : 'exo-list' , component : ExoList},
+        {path : 'exo-details' , component : ExoDetails},
+        {path : 'exo-add' , component : ExoAdd}
     ]}
 ];
 
