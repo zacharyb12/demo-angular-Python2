@@ -1,9 +1,19 @@
 @for(product of productsList ; track product){
-<div>
 
-    {{ product.name }}
-    
-    <button (click)="deleteProduct(product.id)">Delete</button>
+<div class="border rounded shadow d-flex m-3">
+
+    <div class="w-50">
+        <h4>{{product.name}}</h4>
+        <p>{{ product.description }}</p>
+        <p>Prix: {{ product.price }} €</p>
+        <p>{{product.quantity}} pc- {{product.id}}</p>
+        <button (click)="deleteProduct(product.id)">Delete</button>
+        <button (click)="detailsProduct(product.id)">Détails</button>
+    </div>
+
+    <div class="w-25">
+        <img [src]="product.imageUrl" alt="" class="" width="100">
+    </div>
 </div>
 
 }

@@ -16,7 +16,7 @@ products : Product[] = [
     note: 4.5,
     quantity: 100, 
     description: 'Description for Product 1',
-  imageUrl : 'https://via.placeholder.com/150'
+  imageUrl : 'https://cdn.pixabay.com/photo/2022/10/18/06/57/cat-7529439_1280.jpg'
 },
   { 
     id: 2, 
@@ -25,7 +25,7 @@ products : Product[] = [
     note: 4.5,
     quantity: 100, 
     description: 'Description for Product 2',
-  imageUrl : 'https://via.placeholder.com/150'
+  imageUrl : 'https://cdn.pixabay.com/photo/2022/10/18/06/57/cat-7529439_1280.jpg'
 }
 ]
 

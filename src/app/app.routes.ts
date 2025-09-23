@@ -42,7 +42,8 @@ export const routes: Routes = [
         {path : 'input-output-bindings' , component : ExoInputBindings},
         {path : 'exo-input-list-product' , component : ContainerComponent},
         {path : 'exo-list' , component : ExoList},
-        {path : 'exo-details' , component : ExoDetails},
+        // ici je prevois un paramètre dans la route
+        {path : 'exo-details/:id' , component : ExoDetails},
         {path : 'exo-add' , component : ExoAdd}
     ]}
 ];
