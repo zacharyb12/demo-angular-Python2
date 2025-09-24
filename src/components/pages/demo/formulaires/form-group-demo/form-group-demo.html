@@ -1,0 +1,81 @@
+<form [formGroup]="monForm" (ngSubmit)="submitValue()">
+
+    <div>
+        <!-- Chacun des  champ est lié au formGroup -->
+        <label for="">Nom</label>
+        <!-- On utilise le "formControlName="value" pour cibler un element du formGroup -->
+        <input type="text" formControlName="nom" class="form-control">
+
+        @if(isSubmitted){
+
+            <!-- On affiche des erreurs precise grace a l'acces champs " monForm.get('nom du champ')" -->
+            <!-- On cible une erreur precise  " ?.errors?.['required']" -->
+            <!-- On Peut n'afficher les erreurs que quand l'utilisateur a interragit avec le champ " monForm.get('nom')?.touched" -->
+             <!-- Dans le selection de l'erreur on note le type de validator en minuscule -->
+        @if(monForm.get('nom')?.errors?.['required'] && monForm.get('nom')?.touched){
+            <!-- ici utilisation du ngStyle pour modifier le style du message d'erreur -->
+        <p [ngStyle]="{'color': 'red'}">le champ nom est obligatoire</p>
+        }
+
+        @if(monForm.get('nom')?.errors?.['minlength'] && monForm.get('nom')?.touched){
+        <p [ngStyle]="{'color': 'red'}">le champ nom doit contenir au moins 3 caractères</p>
+        }
+
+        }
+
+    </div>
+
+    <div>
+        <label for="">Prenom</label>
+        <input type="text" formControlName="prenom" class="form-control">
+        @if(isSubmitted){
+
+        @if(monForm.get('prenom')?.errors?.['required'] && monForm.get('prenom')?.touched){
+        <p [ngStyle]="{'color': 'red'}">le champ prénom est obligatoire</p>
+        }
+
+        @if(monForm.get('prenom')?.errors?.['minlength'] && monForm.get('prenom')?.touched){
+        <p [ngStyle]="{'color': 'red'}">le champ prénom doit contenir au moins 3 caractères</p>
+        }
+        }
+
+
+    </div>
+
+    
+    <div>
+        <label for="">Email</label>
+        <input type="text" formControlName="email" class="form-control">
+        @if(isSubmitted){
+        
+        @if(monForm.get('email')?.errors?.['email'] && monForm.get('email')?.touched){
+        <p [ngStyle]="{'color': 'red'}">le champ n'est pas un email valide!</p>
+        }
+
+        @if(monForm.get('email')?.errors?.['required'] && monForm.get('email')?.touched){
+        <p [ngStyle]="{'color': 'red'}">le champ email est obligatoire</p>
+        }
+
+        }
+
+    </div>  
+
+    
+    <div>
+        <label for="">Age</label>
+        <input type="number" formControlName="age" class="form-control">
+        @if(isSubmitted){
+
+            @if(monForm.get('age')?.errors?.['min'] && monForm.get('age')?.touched){
+                <p [ngStyle]="{'color': 'red'}">le champ age doit être supérieur à 18</p>
+            }
+
+            @if(monForm.get('age')?.errors?.['required'] && monForm.get('age')?.touched){
+                <p [ngStyle]="{'color': 'red'}">le champ age est obligatoire</p>
+            }
+        }
+            </div>
+
+
+    <button type="submit">Send</button>
+</form>

@@ -1,0 +1,5 @@
+<div>
+    <input type="text" [(ngModel)]="name">
+    <p [ngStyle]="{ color: 'red' }">{{ errorMessage }}</p>
+    <button (click)="submitName()">Send</button>
+</div>

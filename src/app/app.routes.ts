@@ -20,6 +20,10 @@ import { AddProductServ } from '../components/pages/demo/demo-service/add-produc
 import { ExoList } from '../components/pages/exercices/exo-service/exo-list/exo-list';
 import { ExoDetails } from '../components/pages/exercices/exo-service/exo-details/exo-details';
 import { ExoAdd } from '../components/pages/exercices/exo-service/exo-add/exo-add';
+import { FormControlDemo } from '../components/pages/demo/formulaires/form-control-demo/form-control-demo';
+import { IntroForm } from '../components/pages/demo/formulaires/intro-form/intro-form';
+import { FormGroupDemo } from '../components/pages/demo/formulaires/form-group-demo/form-group-demo';
+import { FormArrayDemo } from '../components/pages/demo/formulaires/form-array-demo/form-array-demo';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -32,6 +36,10 @@ export const routes: Routes = [
         {path : 'serv-list-product' , component : ListProductServ},
         {path : 'serv-details-product' , component : DetailsProductServ},
         {path : 'serv-create-product' , component : AddProductServ},
+        {path : 'form-intro' , component : IntroForm},
+        {path : 'form-controle' , component : FormControlDemo},
+        {path : 'form-group' , component : FormGroupDemo},
+        {path : 'form-array' , component : FormArrayDemo},
     ]},
     {path : 'exo' , component : ExoRouting , children : [ 
         {path : 'compteur' , component : CompteurComponent},

@@ -6,7 +6,9 @@ import { DemoService } from '../../../../../core/services/monService/demo-servic
   selector: 'app-list-product-serv',
   imports: [],
   templateUrl: './list-product-serv.html',
-  styleUrl: './list-product-serv.css'
+  styleUrl: './list-product-serv.css',
+  // ici on demande une instance de DemoService au  chargement du composant
+  providers: [DemoService]
 })
 export class ListProductServ{
 
