@@ -1,6 +1,8 @@
 import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Product } from '../../../../../models/product.model';
+import { FormGenerique } from '../form-generique/form-generique';
 
 @Component({
   selector: 'app-form-group-demo',
@@ -8,7 +10,8 @@ import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, 
     //1 importer les elements necessaires pour les formulaires
     FormsModule,
     ReactiveFormsModule,
-    NgStyle
+    NgStyle,
+    FormGenerique
   ],
   templateUrl: './form-group-demo.html',
   styleUrl: './form-group-demo.css'
@@ -18,11 +21,15 @@ export class FormGroupDemo {
   // 2  Declaration du formulaire de type FormGroup ( ensemble de formControls)
 monForm : FormGroup;
 
+product! : Product;
+
 // Exemple : un formControl seul
 monControl  = new FormControl('',[Validators.required]);
 
 
 isSubmitted : boolean = false;
+
+obj! : Product;
 
 constructor(
   // 3 Injection du service FormBuilder pour construire le formulaire
@@ -42,8 +49,8 @@ constructor(
 submitValue(){
   // verification de la validité du formulaire avant soumission
   if(this.monForm.valid){
-
     console.log(this.monForm);
+
   }else{
 
     // Dans le cas ou le formulaire n'est pas valide on peut forcer l'affichage des messages d'erreurs
