@@ -2,7 +2,6 @@ import { NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from '../../../../../models/product.model';
-import { FormGenerique } from '../form-generique/form-generique';
 
 @Component({
   selector: 'app-form-group-demo',
@@ -11,7 +10,7 @@ import { FormGenerique } from '../form-generique/form-generique';
     FormsModule,
     ReactiveFormsModule,
     NgStyle,
-    FormGenerique
+
   ],
   templateUrl: './form-group-demo.html',
   styleUrl: './form-group-demo.css'

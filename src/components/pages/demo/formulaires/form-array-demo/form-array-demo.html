@@ -1,1 +1,22 @@
-<p>form-array-demo works!</p>
+<form [formGroup]="monform" (ngSubmit)="submitForm()" >
+
+
+<div>
+    <label for="">Title</label>
+    <input type="text" formControlName="title">
+</div>
+
+<button (click)="addAuthor()">add input</button>
+
+@for(control of Author.controls;track control;let i = $index){
+    <div [formArrayName]="'authors'">
+        <input type="text" [formControlName]="i">
+        <button (click)="removeAuthor(i)">delete</button>
+    </div>
+}
+
+<!-- <div *ngfor="let control of Author.controls;let i = index">
+    <input type="text" [formControlName]="i">
+</div> -->
+
+</form>
