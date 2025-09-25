@@ -23,6 +23,8 @@
 		</div>
 	</li>
 
+	@if(isAdminC()){
+	
 	<li ngbDropdown class="nav-item" role="presentation">
 		<button type="button" class="nav-link" ngbDropdownToggle>Exo</button>
 		<div ngbDropdownMenu>
@@ -38,6 +40,12 @@
 			<button routerLink="exo/exo-details" ngbDropdownItem>Exo Details</button>
 			<div class="dropdown-divider"></div>
 		</div>
+	</li>
+	}
+
+	
+	<li>
+		<app-login-component></app-login-component>
 	</li>
 
 </ul>
