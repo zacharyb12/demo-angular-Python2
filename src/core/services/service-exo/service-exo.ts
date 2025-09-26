@@ -4,6 +4,8 @@ import { addProduct } from '../../../models/addProduct.model';
 
 @Injectable({
   providedIn: 'root'
+  // providedIn: 'any'
+  // providedIn: 'platform'
 })
 
 export class ServiceExo {

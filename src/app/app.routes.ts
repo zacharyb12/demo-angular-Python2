@@ -25,13 +25,21 @@ import { IntroForm } from '../components/pages/demo/formulaires/intro-form/intro
 import { FormGroupDemo } from '../components/pages/demo/formulaires/form-group-demo/form-group-demo';
 import { FormArrayDemo } from '../components/pages/demo/formulaires/form-array-demo/form-array-demo';
 import { SignalDemo } from '../components/pages/demo/signal-demo/signal-demo';
+import { Guard } from '../components/pages/demo/guard/guard';
+import { adminGuardGuard } from '../core/guard/admin-guard/admin-guard-guard';
+import { formGuard } from '../core/guard/form-guard/form-guard';
+import { childGuard } from '../core/guard/child-guard/child-guard';
+import { matchGuard } from '../core/guard/match-guard/match-guard';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
+    // canActivateChild permet de proteger toutes les routes enfants d'une route
     {path : 'demo' , component : HomeRouter ,children : [ 
-        {path : 'bindings' , component : Bindings},
-        {path : 'bootstrap' , component : Bootstrap},
-        {path : 'pipes' , component : PipeComponent},
+        // utilisation du guard AdminGuard permet de verifier avant d'acceder a une seule route
+        {path : 'bindings' , component : Bindings , canActivate : [adminGuardGuard] },
+        // utilisation du guard MatchGuard permet de verifier avant de charger un component
+        {path : 'bootstrap' , canMatch : [matchGuard], loadComponent : () => import('../components/pages/demo/bootstrap/bootstrap').then(c => c.Bootstrap)},
+        {path : 'pipes' , component : PipeComponent },
         {path : 'directives' , component : DirectiveComponent},
         {path : 'input-output' , component : ParentComponent},
         {path : 'serv-list-product' , component : ListProductServ},
@@ -39,11 +47,13 @@ export const routes: Routes = [
         {path : 'serv-create-product' , component : AddProductServ},
         {path : 'form-intro' , component : IntroForm},
         {path : 'form-controle' , component : FormControlDemo},
-        {path : 'form-group' , component : FormGroupDemo},
+        // Permet d'effectuer une verification avant de quitter la page
+        {path : 'form-group' , component : FormGroupDemo , canDeactivate : [formGuard]},
         {path : 'form-array' , component : FormArrayDemo},
-        {path : 'signals' , component : SignalDemo}
+        {path : 'signals' , component : SignalDemo},
+        {path : 'guard' , component : Guard}
     ]},
-    {path : 'exo' , component : ExoRouting , children : [ 
+    {path : 'exo' , component : ExoRouting , canActivateChild : [childGuard] ,  children : [ 
         {path : 'compteur' , component : CompteurComponent},
         {path : 'product' , component : ProductDetails},
         {path : 'directives-exo1' , component : DirectivesExo1},
@@ -55,8 +65,7 @@ export const routes: Routes = [
         // ici je prevois un paramètre dans la route
         {path : 'exo-details/:id' , component : ExoDetails},
         {path : 'exo-add' , component : ExoAdd}
-    ]}
+                // {path : 'exo-add' , loadComponent : ()=> import('../components/pages/exercices/exo-service/exo-add/exo-add').then(m => m.ExoAdd)}
+    ]},
+    {path : '**' , redirectTo : ''}
 ];
-
-
-//http://localhost:4200/demo/bindings

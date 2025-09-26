@@ -1,7 +1,8 @@
 import { NgStyle } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject, Input, input, signal, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from '../../../../../models/product.model';
+import { FormService } from '../../../../../core/services/form-service/form-service';
 
 @Component({
   selector: 'app-form-group-demo',
@@ -43,6 +44,14 @@ constructor(
     email: ['',[Validators.required, Validators.email]],
     age : [,[Validators.required,Validators.min(18)]]
   })
+
+  // 5 Abonnement aux changements du formulaire
+    this.monForm.valueChanges.subscribe({
+    next : () => {
+      // chaque fois qu'une valeur change dans le formulaire on met a jour le signal
+      this.formService.changeSignal();
+    }
+  });
 }
 
 submitValue(){
@@ -59,7 +68,28 @@ submitValue(){
   }
   
 }
+// -----------------------------------------------------------------------
 
+
+// signal pour suivre les changements dans le formulaire
+private formService = inject(FormService)
+
+isDirtyComponent = this.formService.formGroupDirty;
+
+
+
+@Input() message! : string;
+ ngOnChanges(changes: SimpleChanges): void {
+// ngOnChanges est déclenché à chaque changement d'une valeur d'une propriété décorée avec @Input
+
+// on lui passe une valeur en chaine de caractere
+// par exemple <app-form-group-demo [message]="'Bonjour'"></app-form-group-demo>
+ 
+  if(changes['message']){
+    this.formService.changeSignal();
+  }
+  
+ }
 
 
 

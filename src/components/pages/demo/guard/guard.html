@@ -1,0 +1,36 @@
+<h1>Guard</h1>
+
+<div>
+    <p>il existe plusieurs type de guard sui permettent de configurer la gestion des routes </p>
+
+    <p>On va creer un element qui sera appelé sur une route </p>
+
+
+    <ul>
+        <li><p>canActivate : permet de savoir si on autorise l'acces a la route </p>
+            <code>ng g guard admin-guard</code>
+        </li>
+        
+        <li><p>canDeactivate : permet de savoir si on autorise la desactivation d'une route</p>
+            <code>ng g guard form-guard</code>
+            
+        </li>
+        
+        <li><p>canActivateChild : permet de savoir si on autorise l'acces a un enfant de la route</p>
+            <code>ng g guard child-guard</code>
+        </li>
+        
+        <li><p>canMatch : permet de verifier avant de charger le composant si l'utilisateur a l'acces</p>
+            <code>ng g guard load-guard</code>
+        </li>
+    </ul>
+
+    <div>
+        <p>Pour utiliser un guard :</p>
+        <p>le generer avec la commande suivante : <code>ng g guard admin-guard</code></p>
+        <p>Definir dans le guard quel sera la condition pour acceder a la router</p>
+        <p>Dand nos routes ( app.routes.ts ) nous allons ajouter l'information sur la route concerné
+            <code>&#123;path : 'bindings' , component : Bindings , canActivate : [ 'nom_Du_Guard'] &#125;,</code>
+        </p>
+    </div>
+</div>

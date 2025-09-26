@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class Bootstrap {
 
+  constructor() { 
+    console.log('Bootstrap component initialized');
+  }
 }

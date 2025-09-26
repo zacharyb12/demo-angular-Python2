@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { User } from '../../../../models/user.model';
 import { FormsModule } from '@angular/forms';
+import { ServiceExo } from '../../../../core/services/service-exo/service-exo';
 
 @Component({
   selector: 'app-bindings',
@@ -8,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 FormsModule
   ],
   templateUrl: './bindings.html',
-  styleUrl: './bindings.css'
+  styleUrl: './bindings.css',
 })
 
 export class Bindings implements OnInit,OnDestroy {
