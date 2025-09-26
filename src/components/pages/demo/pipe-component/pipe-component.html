@@ -1,3 +1,26 @@
+<h1>Les pipes</h1>
+
+<div class="card p-2 m-2">
+<p>Les pipes sont des fonctionnalités d'Angular qui permettent de transformer les données affichées dans les templates.</p>
+<p>Ils sont utilisés pour formater, filtrer ou modifier les données avant de les afficher à l'utilisateur.</p>
+<p>Les pipes sont souvent utilisés pour des transformations courantes telles que la mise en majuscule, la mise en minuscule, le formatage des dates, des nombres, des devises, etc.</p>
+<p>Angular fournit plusieurs pipes intégrés, mais il est également possible de créer des pipes personnalisés pour répondre à des besoins spécifiques.</p>
+<p>Les pipes sont utilisés dans les templates en utilisant le symbole | (pipe) suivi du nom du pipe et de ses éventuels paramètres.</p>
+<p>Par exemple, pour afficher une date au format court, on peut utiliser le pipe date comme ceci : {{ myDate | date:'short' }}</p>
+<p>Il est également possible de chaîner plusieurs pipes ensemble pour effectuer des transformations successives sur
+
+<div class="card p-2 m-auto text-center w-75">
+    <p>Création d'un pipe</p>
+    <code>ng generate pipe pipes/monPipe</code>
+
+<br>
+    <div>Utilisation</div>
+    <pre><code>&#123; &#123; valeur| monPipe &#125;&#125;</code></pre>
+
+
+
+</div>
+</div>
 
 <div class="card w-75 p-3 m-3 m-auto">
     <h3>Les Pipes texte</h3>

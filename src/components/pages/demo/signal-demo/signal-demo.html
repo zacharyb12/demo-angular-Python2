@@ -1,0 +1,31 @@
+<h1>Signals</h1>
+
+
+<div>
+    {{counterC()}}
+        <br>
+        <div class="d-flex">
+            <button (click)="incrementC()">Increment</button>
+            <button (click)="decrementC()">Decrement</button>
+        </div>
+</div>
+
+<div>
+    TotalTest : {{totalTest()}}
+    TotalC : {{totalC()}}
+    TotalUpdate : {{totalUpdate()}}
+    <button (click)="addQuantityC()">+</button>
+    <button (click)="removeQuantityC()">-</button>
+</div>
+
+
+<div>
+    {{signalComponent()}}
+    {{test}}
+    <button (click)="updateSignalPrivate()">update</button>
+</div>
+
+<div>
+    subject : {{mySubjectComponent}}
+    <button (click)="updateValue()">update</button>
+</div>

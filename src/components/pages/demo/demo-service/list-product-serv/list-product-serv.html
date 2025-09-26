@@ -1,5 +1,37 @@
 <h1>Products list</h1>
 
-@for(p of ListProducts;track p){
-<p>{{p.name}}</p>
+<div class="card p-2 m-2">
+<p>Les Services permettent de centralisé la logique d'un model </p>
+<p>Nous utiliserons un service pour centraliser la liste des produits</p>
+<p>Grace à ce service, nous pourrons facilement récupérer et manipuler la liste des produits depuis n'importe quel composant de notre application qui aura injecté le service .</p>
+
+<div class="card p-2 m-auto text-center w-75">
+    <p>Création du service</p>
+    <code>ng generate service services/product</code>
+<code>private readonly productService : inject(ProductService)</code>
+</div>
+
+</div>
+<div class="d-flex flex-wrap">
+
+    @for(p of ListProducts;track p){
+        <div class="card w-25 p-2 m-2">
+            <div class="d-flex justify-content-between">
+                
+    <div>
+        <p>{{p.name}}</p>
+        <p>{{p.price}}</p>
+        <p>{{p.description}}</p>
+    </div>
+    <div>
+        <img class="w-25 h-25" [src]="p.imageUrl">
+    </div>
+</div>
+
+<div class="d-flex justify-content-between">
+    <button class="btn btn-sm w-50 btn-primary " >Add</button>
+    <button class="btn btn-sm w-50 btn-danger" >Remove</button>
+        </div>
+    </div>
 }
+</div>

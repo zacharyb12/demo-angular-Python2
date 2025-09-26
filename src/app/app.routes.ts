@@ -24,6 +24,7 @@ import { FormControlDemo } from '../components/pages/demo/formulaires/form-contr
 import { IntroForm } from '../components/pages/demo/formulaires/intro-form/intro-form';
 import { FormGroupDemo } from '../components/pages/demo/formulaires/form-group-demo/form-group-demo';
 import { FormArrayDemo } from '../components/pages/demo/formulaires/form-array-demo/form-array-demo';
+import { SignalDemo } from '../components/pages/demo/signal-demo/signal-demo';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -40,6 +41,7 @@ export const routes: Routes = [
         {path : 'form-controle' , component : FormControlDemo},
         {path : 'form-group' , component : FormGroupDemo},
         {path : 'form-array' , component : FormArrayDemo},
+        {path : 'signals' , component : SignalDemo}
     ]},
     {path : 'exo' , component : ExoRouting , children : [ 
         {path : 'compteur' , component : CompteurComponent},

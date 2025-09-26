@@ -1,4 +1,22 @@
 <h1>Details Products</h1>
+<div class="card p-2 m-2">
+    <p>Pour recuperer un produit nous allons pouvoir communiquer avec notre service pour demander un element precis </p>
+    <p>Nous aurons besoin de l'identifiant du produit </p>
+    <p>Premièrement nous allons definir un paramètre dans la route : products/:id</p>
+    <p>Ensuite nous allons utiliser le routeur pour passer l'id en parametre dans l'url </p>
+    <p>Et dans le composant details nous utiliserons le ActivatedRoute pour recuperer l'id</p>
+
+    <div class="card p-2 m-auto text-center w-75">
+        <p>Ajoutons une route dans le fichier app-routing.module.ts</p>
+        <code>&#123;path: 'products/:id', component: DetailsProductServComponent&#125;</code>
+        <p>Ensuite, nous allons utiliser le routeur pour passer l'id en parametre dans l'url</p>
+        <code>&#60;button (click)="goToDetails(p.id)"&#62;Details&#60;/button&#62;</code>
+        <p>Enfin dans le composant details nous utiliserons le ActivatedRoute pour recuperer l'id</p>
+        <code>private readonly route : ActivatedRoute = inject(ActivatedRoute)</code>
+        <code>const id = +this.route.snapshot.paramMap.get('id')</code>
+
+    </div>
+</div>
 
 <div>
     <h4>{{product.name}}</h4>
