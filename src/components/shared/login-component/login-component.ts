@@ -15,37 +15,32 @@ export class LoginComponent {
 
 loginForm : FormGroup;
 
-isLogged : boolean = false;
 isLoggedSignal = signal<boolean>(false);
 
 private readonly authService = inject(AuthService)
 private readonly fb = inject(FormBuilder);
 
-constructor(){
+constructor()
+{
   this.loginForm = this.fb.group({
     email : ['',[ Validators.required]],
     password : ['',[Validators.required,Validators.minLength(4)]]
   })
+  
 
-
-this.isLoggedSignal = this.authService.isLoggedSignalS
-
-
-
-
+this.isLoggedSignal = this.authService.isLoggedSignalService;
+// this.isLogged = this.authService.isLoggedSignalService()
   
 }
 
 
 login(){
   if(this.loginForm.valid){
-this.authService.Login(this.loginForm.value.email, this.loginForm.value.password);
-
+this.authService.login(this.loginForm.value.email, this.loginForm.value.password);
   }
 }
 
 logout(){
-  this.authService.logout();
-  this.isLogged = false;
+this.authService.logout();
 }
 }

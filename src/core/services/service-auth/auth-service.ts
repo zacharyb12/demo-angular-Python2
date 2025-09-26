@@ -6,8 +6,30 @@ import { User } from '../../../models/user.model';
 })
 export class AuthService {
  
+  // declaration d'un signal pour permettre de transmettre l'information en temps réel
+isLoggedSignalService = signal<boolean>(false);
+
+// declaration d'un signal pour verifier le role de l'utilisateur
+isAdminSignalService = signal<boolean>(false);
+
+constructor() {
+// verification des valeurs dans le localstorage en cas de rechargement de la page
+  const role = localStorage.getItem('role');
+// si j'ai un role dans le localstorage je met à jour le signal
+  if(role){
+    this.isLoggedSignalService.set(true);
+
+    if(role === 'admin'){
+      this.isAdminSignalService.set(true);
+    }
+  }
+
+
+ }
+
+
 // LocalStorage permet de faire perdurer une donnée même après le rechargement de la page
-demoStorage(){
+demoStorage(token : string){
   // creer quelque chose dans le localstorage ( utilise les clés valeurs)
   localStorage.setItem('name','Angular');
 
@@ -54,67 +76,47 @@ users : User[] = [
   }
 ]
 
-// declaration de signal typé boolean
-isLoggedSignalS = signal<boolean>(false);
-isAdminS = signal<boolean>(false);
+// verification en fonction des données dans le service
+login(email : string, password : string){
+  // recuperation de l'utilisateur dans la liste des utilisateurs
+const user = this.users.find(u => u.email === email);
 
+// si j'ai un utilisateur et que le mot de passe est correct
+if(user && user.password === password){
+  // mettre à jour le signal quand l'utilisateur se connecte
+  
+  this.isLoggedSignalService.set(true);
+  // si l'utilisateur est admin je stocke son role 'admin' dans le localstorage
 
-constructor(){
-// verification en cas de rechargement de la page pour le role
-const role = localStorage.getItem('role');
-if(role === 'admin'){
-  this.isAdminS.set(true);
-}
+if(user.isAdmin){
+  // ajout d'information dans le localstorage quand l'utilisateur se connecte
+  localStorage.setItem('role','admin');
+  sessionStorage.setItem('role','admin');
+  this.isAdminSignalService.set(true);
 
-// verification en cas de rechargement de la page pour l'etat de connection
-    const token = localStorage.getItem('token');
-  if(token){
-    this.isLoggedSignalS.set(true);
-  }
-}
-
-
-  Login(email : string, password : string){
-    
-  const user = this.users.find(u => u.email === email);
-  if(user?.password === password){
-// Si la connection est validé on peut modifier les valeurs du signal isLoggedSignalS
-// et dans le  localstorage on ajoute un token
-    this.isLoggedSignalS.set(true);
-    localStorage.setItem('token','logged');
-
-  if(user.isAdmin){
-    // si l'utilisateur est admin on modifie le signal isAdminS
-    // et on ajoute dans le localstorage le role
-    this.isAdminS.set(true);
-    localStorage.setItem('role','admin');
-    
 
 }else{
-  // si l'utilisateur n'est pas admin on enregistre juste le role user dans le localstorage
+  // si l'utilisateur n'est pas admin je stocke son role 'user' dans le localstorage
   localStorage.setItem('role','user');
+  sessionStorage.setItem('role','user');
+}
 }
 
 
-  }
+}
 
-  }
-  
+register(){
 
-  Register(){
+}
 
-  }
+logout(){
+  // suppression des informations dans le localstorage quand l'utilisateur se deconnecte
+localStorage.removeItem('role');
+sessionStorage.removeItem('role');
 
-
-  logout(){
-
-    // pour la deconnection on supprime le token et le role du localstorage
-    localStorage.removeItem('role');
-    localStorage.removeItem('token');
-
-    // on remet les signaux à false
-    this.isLoggedSignalS.set(false);
-    this.isAdminS.set(false);
-  }
+// remettre les signaux à false quand l'utilisateur se deconnecte
+this.isLoggedSignalService.set(false);
+this.isAdminSignalService.set(false);
+}
 
 }

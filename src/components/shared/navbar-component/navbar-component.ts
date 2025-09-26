@@ -17,12 +17,16 @@ import { AuthService } from '../../../core/services/service-auth/auth-service';
 })
 export class NavbarComponent {
 
-isAdminC = signal<boolean>(false);
 
+isAdminSignalNavbar = signal<boolean>(false);
+
+bool : boolean = false;
 
 private readonly authService = inject(AuthService)
+
 constructor(){
-this.isAdminC = this.authService.isAdminS;
+
+this.isAdminSignalNavbar = this.authService.isAdminSignalService
 
 }
 }

@@ -1,16 +1,16 @@
 
 {{isLoggedSignal()}}
-
 @if(!isLoggedSignal()){
 
+    
     <form [formGroup]="loginForm" (ngSubmit)="login()">
         
         <div>
-        <label for="">email</label>
-        <br>
-        <input type="text" formControlName="email">
-    </div>
-
+            <label for="">email</label>
+            <br>
+            <input type="text" formControlName="email">
+        </div>
+        
     <div>
         <label for="">Password</label>
         <br>
@@ -18,6 +18,9 @@
     </div>
     <button type="submit">login</button>
 </form>
-}@else{
+}
+@else {
+   
     <button (click)="logout()">logout</button>
 }
+
