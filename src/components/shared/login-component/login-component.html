@@ -1,26 +1,41 @@
+@if (isOpen()) {
+    <div class=" card p-2  me-0 position-absolute z-3 top-0 end-10 bg-light">
+        <!-- Booleen pour ouvrir ou fermer le formulaire -->
 
-{{isLoggedSignal()}}
-@if(!isLoggedSignal()){
+        <!-- Condition si l'utilisateur est connecté -->
+        @if(!isLoggedSignal()){
 
-    
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
-        
-        <div>
-            <label for="">email</label>
-            <br>
-            <input type="text" formControlName="email">
-        </div>
-        
-    <div>
-        <label for="">Password</label>
-        <br>
-        <input type="text" formControlName="password">
+
+            <p> admin : admin</p>
+            <p> user : user</p>
+
+            <!-- formulaire de connexion -->
+            <form (mouseleave)="toggleForm()" [formGroup]="loginForm" (ngSubmit)="login()">
+
+                <div>
+                    <label for="">email</label>
+                    <br>
+                    <input type="text" formControlName="email">
+                </div>
+
+                <div>
+                    <label for="">Password</label>
+                    <br>
+                    <input type="text" formControlName="password">
+                </div>
+
+                <button class="btn btn-sm m-1 btn-primary" type="submit">login</button>
+                
+            </form>
+
+        }
+        @else {
+            <!-- Si l'utilisateur est connecté -->
+            <button (click)="logout()">logout</button>
+        }
+
     </div>
-    <button type="submit">login</button>
-</form>
+}@else {
+    <!-- Si le formulaire est fermé -->
+    <button class="btn btn-sm m-1 btn-primary position-absolute top-0 end-0" (click)="toggleForm()">login</button>
 }
-@else {
-   
-    <button (click)="logout()">logout</button>
-}
-

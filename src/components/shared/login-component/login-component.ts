@@ -6,12 +6,15 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
   selector: 'app-login-component',
   imports: [
     FormsModule,
-    ReactiveFormsModule
-  ],
+    ReactiveFormsModule,
+],
   templateUrl: './login-component.html',
   styleUrl: './login-component.css'
 })
 export class LoginComponent {
+
+  // isOpen permet d'ouvrir ou fermer le formulaire
+isOpen = signal<boolean>(false);
 
 loginForm : FormGroup;
 
@@ -26,13 +29,13 @@ constructor()
     email : ['',[ Validators.required]],
     password : ['',[Validators.required,Validators.minLength(4)]]
   })
-  
-
 this.isLoggedSignal = this.authService.isLoggedSignalService;
 // this.isLogged = this.authService.isLoggedSignalService()
-  
 }
 
+toggleForm(){
+  this.isOpen.update(value => !value);
+}
 
 login(){
   if(this.loginForm.valid){
