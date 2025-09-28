@@ -1,22 +1,21 @@
 <div class="card shadow w-75 m-auto p-3 text-center">
 
 <h1>Input Output</h1>
+<h4>Message du parent : {{title}}</h4>
 
 <div class="card w-75 p-3 m-3 m-auto">
     <h3>Le composant Parent</h3>
-    <p>Le composant parent va transmettre des données au composant enfant via le décorateur @Input()</p>
-    <p>Le composant enfant va émettre des événements au composant parent via le décorateur @Output()</p>
+    <p>Le composant parent va transmettre des données au composant enfant via le décorateur <code>@Input()</code> (déclaré dans le composant enfant)</p>
+    <p>Le composant enfant va émettre des événements au composant parent via le décorateur <code>@Output()</code> (déclaré dans le composant enfant)</p>
     <p>L'utilisation des input output necessite une hierarchie parent enfant</p>
 </div>
 
 
-<h4>Parent : {{title}}</h4>
 </div>
 
-<div class="card shadow w-75 mt-3 m-auto">
-    <h1 class="text-center mt-3 mb-3">Enfant affiche le message du parent</h1>
-    <h3>Uniquement un string : value avec le @Input()</h3>
-    <h3>Uniquement un string : valueNewVersion avec le input  string ()string</h3>
+<div class="card shadow w-75 mt-3 p-3 m-auto">
+    <h1 class="text-center mt-3 mb-3">Enfant affiche le message du parent </h1>
+    <h3>L'enfant affiche value avec le @Input() et valueNewVersion avec le input  string ()string</h3>
     <app-enfant-component
     [value]="title"
     [valueNewVersion]="title"
@@ -24,7 +23,7 @@
 <div>
 
     <div class="card shadow w-75 mt-3 m-auto">
-        <h1 class="text-center mt-3 mb-3">Enfant affiche la liste des produits</h1>
+        <h1 class="text-center mt-3 mb-3">L'enfant affiche la liste des produits</h1>
         <h3>Liste de produits @Input()</h3>
         <app-enfant-component
         [productListEnfant]="productParentList"

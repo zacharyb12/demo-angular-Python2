@@ -25,8 +25,10 @@ counterC = signal(0);
   // constructor() {
   //   this.counterC = this.signalService.counter;
   // }
-
+  
   incrementC(){
+    // il est ajouter ici car le constructeur est commenté au dessus 
+    this.counterC = this.signalService.counter;
     this.signalService.increment()
   }
 
@@ -39,13 +41,12 @@ counterC = signal(0);
 // computed signal
 
 // copie du signal depuis la declaration du service 
- totalC  = this.signalService.total;
- totalUpdate = signal(0)
+ totalComposant  = this.signalService.total;
 
 
 // affectation de la valeur du signal local
 // la mise a jour de la valeur est faite automatiquement
-totalTest = computed(() => this.signalService.price() * this.signalService.quantity());
+totalComputed = computed(() => this.signalService.price() * this.signalService.quantity());
 
 // constructor() {
 //   // update necessite un declenchement manuel
@@ -73,16 +74,14 @@ removeQuantityC(){
 
 signalComponent = signal<number>(0)
 
-test = 0
-
 
 // constructor() {
 //   this.signalComponent = this.signalService.getSignalPrivate();
-//   this.test = this.signalService.getSignalPrivateValue();
 // }
 
 updateSignalPrivate(){
-  this.signalService.setSignalPrivate(8)
+  this.signalComponent = this.signalService.getSignalPrivate();
+  this.signalService.setSignalPrivate(5)
 }
 
 // -----------------------------------------------------------------

@@ -6,8 +6,7 @@
 <p>Les pipes sont souvent utilisés pour des transformations courantes telles que la mise en majuscule, la mise en minuscule, le formatage des dates, des nombres, des devises, etc.</p>
 <p>Angular fournit plusieurs pipes intégrés, mais il est également possible de créer des pipes personnalisés pour répondre à des besoins spécifiques.</p>
 <p>Les pipes sont utilisés dans les templates en utilisant le symbole | (pipe) suivi du nom du pipe et de ses éventuels paramètres.</p>
-<p>Par exemple, pour afficher une date au format court, on peut utiliser le pipe date comme ceci : {{ myDate | date:'short' }}</p>
-<p>Il est également possible de chaîner plusieurs pipes ensemble pour effectuer des transformations successives sur
+<p>Exemple : pour afficher une date au format court, on peut utiliser le pipe date comme ceci : &#123; &#123; myDate | date : 'short' &#125; &#125;</p>
 
 <div class="card p-2 m-auto text-center w-75">
     <p>Création d'un pipe</p>
@@ -22,7 +21,7 @@
 </div>
 </div>
 
-<div class="card w-75 p-3 m-3 m-auto">
+<div class="card w-75 text-center p-3 m-3 m-auto">
     <h3>Les Pipes texte</h3>
 
     <div>
@@ -46,7 +45,7 @@
 </div>
 
 
-<div class="card w-75 p-3 m-3 m-auto">
+<div class="card w-75 p-3 m-3 m-auto text-center mt-3">
     <h3>Les Pipes Number</h3>
 
     <div>
@@ -68,60 +67,50 @@
     </div>
 </div>
 
-<div class="card w-75 p-3 m-3 m-auto">
+<div class="card w-75 p-3 m-3 m-auto mt-3 text-center">
     <h3>Les Pipes Currency</h3>
 
     <div>
         <h5>Currency Pipe</h5>
         <p>Formate le nombre en tant que devise</p>
 
-        <p>Valeur par defaut : $</p>
-        {{myCurrency | currency}}
+        <p>Valeur par defaut $ : {{myCurrency | currency}}</p>
         <br>
 
-        <p>Valeur 'EUR' : €</p>
-        {{myCurrency | currency : 'EUR' }}
+        <p>Valeur 'EUR' : {{myCurrency | currency : 'EUR' }}</p>
         <br>
 
-                <p>Valeur 'CAD' : €</p>
-        {{myCurrency | currency : 'CAD'}}
+        <p>Valeur 'CAD' : {{myCurrency | currency : 'CAD'}}</p>
         <br>
 
-        <p>Valeur 'EUR' : €</p>
-        {{myCurrency | currency :  'EUR' : 'symbol' :'2.2-2' }}
+        <p>Valeur 'EUR' : {{myCurrency | currency :  'EUR' : 'symbol' :'2.2-2' }}</p>
         <br>
 
     </div>
 </div>
 
 
-<div class="card w-75 p-3 m-3 m-auto">
+<div class="card w-75 p-3 mt-3 m-auto">
     <h3>Les Dates Pipes</h3>
 
     <div>
         <h5>Date Pipe</h5>
-        <p>Sans Pipes</p>
-        {{myDate}}
-        <br>
-        {{myDate | date : 'full'}}
+        <p>Sans Pipes : {{myDate}} </p>
     </div>
 
     <div>
-        <p>Avec Pipes</p>
-        {{myDate | date}}
+        <p>Avec Pipes : {{myDate | date}} </p>
     </div>
 
         <div>
-        <p>Avec Pipes et params</p>
-        {{myDate | date : 'dd/MM/yyyy'}}
+        <p>Avec Pipes et paramètres 'dd/MM/yyyy' : {{myDate | date : 'dd/MM/yyyy'}}</p>
     </div>
 
             <div>
-        <p>Avec Pipes et short</p>
-        {{myDate | date : 'short'}}
+        <p>Avec Pipes et short : {{myDate | date : 'short'}}</p>
     </div>
 
-                <div>
+    <div>
         <p>Avec Pipes et short date</p>
         {{myDate | date : 'shortDate'}}
     </div>
@@ -143,25 +132,26 @@
 
     </div>
 
-    <div class="card">
-        <h4>Pipe Json</h4>
-        <p>Transforme le contenu d'un objet en json</p>
-        <p>Sans Pipe</p>
-        {{user}}
-        <br>
-        <p>Avec Pipe</p>
-        {{user | json}}
-    </div>
 </div>
 
-<div class="card w-75 p-3 m-3 m-auto">
+<div class="card w-75 p-3 mt-3 m-auto">
+    <h4>Pipe Json</h4>
+    <p>Transforme le contenu d'un objet en json</p>
+    <p>Sans Pipe</p>
+    {{user}}
+    <br>
+    <p>Avec Pipe</p>
+    {{user | json}}
+</div>
+
+<div class="card w-75 p-3 mt-3 m-auto">
     <h4>Pipe Custom</h4>
     <p>Creer son propre pipe</p>
     {{ texteEmoji | emoji}}
 
 </div>
 
-<div class="card w-75 p-3 m-3 m-auto">
+<div class="card w-75 p-3 mt-3 m-auto">
     <h3>Pipes custom avec input</h3>
 
     <div>

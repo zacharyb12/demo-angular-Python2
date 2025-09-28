@@ -50,9 +50,7 @@ getSignalPrivateValue(){
 }
 
 setSignalPrivate(value : number){
-  if(value !== 5){
-    this.signalPrivate.set(value);
-  }
+      this.signalPrivate.set(value);
 }
 
 

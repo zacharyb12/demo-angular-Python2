@@ -1,31 +1,57 @@
-<h1>Signals</h1>
+<div class="card w-75 m-auto p-3 text-center">
+    <h1>Signals</h1>
+    <p>Les signaux sont une nouvelle fonctionnalité d'Angular qui permet de gérer la communication entre les composants de manière plus efficace.</p>
+<p>Ils permettent de simplifier la gestion des événements et des données partagées entre les composants.
+    <br>
+    Les signaux sont basés sur le concept de "réactivité", ce qui signifie que les composants peuvent réagir automatiquement aux changements de données sans avoir besoin de gérer manuellement les abonnements ou les événements.
+</p>
+<p>Les signaux sont utilisés pour transmettre des données ou des événements entre les composants, en utilisant un système de publication/abonnement automatique.</p>
+<p>Un composant peut émettre un signal lorsqu'un événement se produit, et d'autres composants peuvent s'abonner à ce signal pour recevoir des notifications.
+</p>
+</div>
 
-
-<div>
-    {{counterC()}}
+<div class="card w-75 p-3 mt-3 m-auto text-center">
+    <p>ici un compteur est déclaré dans le service et un autre dans le composant </p>
+    <p>le compteur du composant est connecté à celui du service ce qui permet de partagé l'information a travers l'application</p>
+    <p>Compteur du composant : {{counterC()}}</p>
+    <p>Compteur du service : {{signalService.counter()}}</p>
         <br>
-        <div class="d-flex">
-            <button (click)="incrementC()">Increment</button>
-            <button (click)="decrementC()">Decrement</button>
+        <div class="d-flex justify-content-evenly">
+            <button class="btn btn-sm btn-primary m-2" (click)="incrementC()">Increment</button>
+            <button class="btn btn-sm btn-danger m-2" (click)="decrementC()">Decrement</button>
         </div>
 </div>
 
-<div>
-    TotalTest : {{totalTest()}}
-    TotalC : {{totalC()}}
-    TotalUpdate : {{totalUpdate()}}
-    <button (click)="addQuantityC()">+</button>
-    <button (click)="removeQuantityC()">-</button>
+<div class="card w-75 p-3 mt-3 m-auto text-center">
+    <p>totalComputed ( computed dans le composant ) : {{totalComputed()}}</p>
+    <p>TotalComposant ( relié a celui du service) : {{totalComposant()}}</p>
+    <div class="d-flex justify-content-evenly">
+        <button class="btn btn-sm btn-primary m-2" (click)="addQuantityC()">+</button>
+        <button class="btn btn-sm btn-danger m-2" (click)="removeQuantityC()">-</button>
+    </div>
 </div>
 
 
-<div>
-    {{signalComponent()}}
-    {{test}}
-    <button (click)="updateSignalPrivate()">update</button>
+<div class="card w-75 p-3 mt-3 m-auto text-center">
+    <p>Ici un getter et un accesseur sont utilisés pour accéder au signal privé</p>
+    <p>Ce qui permet un controle au niveau du service</p>
+    <p>Signal du composant : {{signalComponent()}}</p>
+
+    <button class="btn btn-sm btn-primary m-2 w-25 m-auto" (click)="updateSignalPrivate()">update</button>
 </div>
 
-<div>
-    subject : {{mySubjectComponent}}
-    <button (click)="updateValue()">update</button>
+
+    <div class="card w-75 p-3 mt-3 m-auto text-center">
+        <div class="p-2">
+            <p>Voici un exemple d'utilisation des Subjects dans le service</p>
+            <p>Le Subject permet d'émettre des valeurs et de s'y abonner facilement.</p>
+            <p>Ce qui permet de comprendre comment le signal communique avec le service.</p>
+            <p>Le Subject est un type de signal qui permet de gérer des flux de données asynchrones.
+                Il fonctionne sur le principe de l'observable, ce qui signifie que les composants peuvent s'abonner à des événements et recevoir des notifications lorsque ces événements se produisent.
+            </p>
+        </div>
+        <div class="card p-2 mt-2">
+            <p>subject : {{mySubjectComponent}}</p>
+            <button (click)="updateValue()">update</button>
+        </div>
 </div>

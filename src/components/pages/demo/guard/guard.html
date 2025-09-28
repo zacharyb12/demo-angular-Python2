@@ -1,36 +1,43 @@
-<h1>Guard</h1>
 
-<div>
-    <p>il existe plusieurs type de guard sui permettent de configurer la gestion des routes </p>
+<div class="w-75 m-auto p-3 text-center">
+    <h1>Guard</h1>
+    
+    <div class="card p-2 mt-3">
+        <p>Les guards sont des services spéciaux dans Angular qui permettent de contrôler l'accès aux routes en fonction de certaines conditions.</p>
+        <p>il existe plusieurs type de guard qui permettent de configurer la gestion des routes </p>
+        <p>Ils sont utilisés pour protéger les routes sensibles, gérer les autorisations d'accès et améliorer la sécurité globale de l'application.</p>
+        <p>Chaque interface correspond à un type de guard et définit une méthode qui doit être implémentée pour déterminer si la navigation vers une route doit être autorisée ou non.</p>
+    </div>
 
-    <p>On va creer un element qui sera appelé sur une route </p>
 
-
-    <ul>
-        <li><p>canActivate : permet de savoir si on autorise l'acces a la route </p>
-            <code>ng g guard admin-guard</code>
+    <ul class="text-start list-unstyled">
+        <li class="card p-2 mt-5">
+            <p>canActivate : permet de définir si on autorise l'acces à la route</p>
+            <p><code>ng g guard admin-guard</code></p>
         </li>
         
-        <li><p>canDeactivate : permet de savoir si on autorise la desactivation d'une route</p>
-            <code>ng g guard form-guard</code>
-            
+        <li class="card p-2 mt-5">
+            <p>canDeactivate : permet de définir si on autorise la désactivation d'une route</p>
+            <p><code>ng g guard form-guard</code></p>
         </li>
-        
-        <li><p>canActivateChild : permet de savoir si on autorise l'acces a un enfant de la route</p>
-            <code>ng g guard child-guard</code>
+
+        <li class="card p-2 mt-5">
+            <p>canActivateChild : permet de définir si on autorise l'accès à un enfant de la route</p>
+            <p><code>ng g guard child-guard</code></p>
         </li>
-        
-        <li><p>canMatch : permet de verifier avant de charger le composant si l'utilisateur a l'acces</p>
-            <code>ng g guard load-guard</code>
+
+        <li class="card p-2 mt-5">
+            <p>canMatch : permet de vérifier avant de charger le composant si l'utilisateur a l'accès</p>
+            <p><code>ng g guard load-guard</code></p>
         </li>
     </ul>
 
-    <div>
+    <div class="card p-2 mt-5">
         <p>Pour utiliser un guard :</p>
-        <p>le generer avec la commande suivante : <code>ng g guard admin-guard</code></p>
-        <p>Definir dans le guard quel sera la condition pour acceder a la router</p>
-        <p>Dand nos routes ( app.routes.ts ) nous allons ajouter l'information sur la route concerné
-            <code>&#123;path : 'bindings' , component : Bindings , canActivate : [ 'nom_Du_Guard'] &#125;,</code>
-        </p>
+        <p>le generer avec la commande suivante :</p> 
+            <p><code>ng g guard admin-guard</code></p>
+        <p>Definir dans le guard quel sera la condition pour acceder a la route</p>
+        <p>Dans nos routes ( app.routes.ts ) nous allons ajouter le paramètre sur la route concerné</p>
+        <p> &#123; path : 'route' , component : Composant , <code> canActivate : [ 'nom_Du_Guard'] </code> &#125;,
     </div>
 </div>
