@@ -32,6 +32,8 @@ import { matchGuard } from '../core/guard/match-guard/match-guard';
 import { adminGuardGuard } from '../core/guard/admin-guard/admin-guard-guard';
 import { BookAppLogin } from '../components/pages/exercices/book-app-login/book-app-login';
 import { ObservableComponent } from '../components/pages/demo/observable-component/observable-component';
+import { HttpReq } from '../core/services/httpRequest/http-req';
+import { HttpRequest } from '../components/pages/demo/http-request/http-request';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -54,7 +56,8 @@ export const routes: Routes = [
         {path : 'form-array' , component : FormArrayDemo},
         {path : 'signals' , component : SignalDemo},
         {path : 'guard' , component : Guard},
-        {path : 'observable' , component : ObservableComponent}
+        {path : 'observable' , component : ObservableComponent},
+        {path : 'http' , component : HttpRequest}
     ]},
     {path : 'exo' , component : ExoRouting , canActivateChild : [childGuard] ,  children : [ 
         {path : 'compteur' , component : CompteurComponent},

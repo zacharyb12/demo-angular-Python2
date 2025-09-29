@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ObservableComponent } from './observable-component';
+import { HttpRequest } from './http-request';
 
-describe('ObservableComponent', () => {
-  let component: ObservableComponent;
-  let fixture: ComponentFixture<ObservableComponent>;
+describe('HttpRequest', () => {
+  let component: HttpRequest;
+  let fixture: ComponentFixture<HttpRequest>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ObservableComponent]
+      imports: [HttpRequest]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ObservableComponent);
+    fixture = TestBed.createComponent(HttpRequest);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -20,6 +20,4 @@ describe('ObservableComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-
 });
