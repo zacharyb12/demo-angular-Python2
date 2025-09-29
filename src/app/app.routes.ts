@@ -30,6 +30,7 @@ import { formGuard } from '../core/guard/form-guard/form-guard';
 import { childGuard } from '../core/guard/child-guard/child-guard';
 import { matchGuard } from '../core/guard/match-guard/match-guard';
 import { adminGuardGuard } from '../core/guard/admin-guard/admin-guard-guard';
+import { BookAppLogin } from '../components/pages/exercices/book-app-login/book-app-login';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -64,7 +65,8 @@ export const routes: Routes = [
         {path : 'exo-list' , component : ExoList},
         // ici je prevois un paramètre dans la route
         {path : 'exo-details/:id' , component : ExoDetails},
-        {path : 'exo-add' , component : ExoAdd}
+        {path : 'exo-add' , component : ExoAdd},
+        {path : 'book-app-login' , component : BookAppLogin}
                 // {path : 'exo-add' , loadComponent : ()=> import('../components/pages/exercices/exo-service/exo-add/exo-add').then(m => m.ExoAdd)}
     ]},
     {path : '**' , redirectTo : ''}
