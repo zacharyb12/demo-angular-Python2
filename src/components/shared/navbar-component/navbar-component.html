@@ -26,6 +26,7 @@
 		</div>
 	</li>
 
+	<!-- Affichage  du menu uniquement si l'utilisateur est admin -->
 	@if(isAdminSignalNavbar()){
 	
 	<li ngbDropdown class="nav-item" role="presentation">
@@ -52,5 +53,3 @@
 	</li>
 
 </ul>
-
-<div [ngbNavOutlet]="nav" class="mt-2"></div>

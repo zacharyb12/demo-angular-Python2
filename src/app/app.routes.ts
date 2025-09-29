@@ -26,17 +26,17 @@ import { FormGroupDemo } from '../components/pages/demo/formulaires/form-group-d
 import { FormArrayDemo } from '../components/pages/demo/formulaires/form-array-demo/form-array-demo';
 import { SignalDemo } from '../components/pages/demo/signal-demo/signal-demo';
 import { Guard } from '../components/pages/demo/guard/guard';
-import { adminGuardGuard } from '../core/guard/admin-guard/admin-guard-guard';
 import { formGuard } from '../core/guard/form-guard/form-guard';
 import { childGuard } from '../core/guard/child-guard/child-guard';
 import { matchGuard } from '../core/guard/match-guard/match-guard';
+import { adminGuardGuard } from '../core/guard/admin-guard/admin-guard-guard';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
     // canActivateChild permet de proteger toutes les routes enfants d'une route
     {path : 'demo' , component : HomeRouter ,children : [ 
         // utilisation du guard AdminGuard permet de verifier avant d'acceder a une seule route
-        {path : 'bindings' , component : Bindings , canActivate : [adminGuardGuard] },
+        {path : 'bindings' , component : Bindings ,canActivate : [adminGuardGuard] },
         // utilisation du guard MatchGuard permet de verifier avant de charger un component
         {path : 'bootstrap' , canMatch : [matchGuard], loadComponent : () => import('../components/pages/demo/bootstrap/bootstrap').then(c => c.Bootstrap)},
         {path : 'pipes' , component : PipeComponent },

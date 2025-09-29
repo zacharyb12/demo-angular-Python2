@@ -17,15 +17,17 @@ import { AuthService } from '../../../core/services/service-auth/auth-service';
 })
 export class NavbarComponent {
 
-
+// declaration d'un signal pour verifier le role de l'utilisateur ( de type signal)
 isAdminSignalNavbar = signal<boolean>(false);
 
+// variable classique de type boolean
 bool : boolean = false;
 
+// injection du service AuthService
 private readonly authService = inject(AuthService)
 
 constructor(){
-
+// copie de la reférence du signal du service AuthService dans le signal du composant NavbarComponent
 this.isAdminSignalNavbar = this.authService.isAdminSignalService
 
 }
