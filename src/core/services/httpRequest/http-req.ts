@@ -7,17 +7,17 @@ import { ResponseDog } from '../../../models/responseDog.model';
 })
 export class HttpReq {
   
+  // injection du HttpClient necessite d'ajouter le provider dans le app.config.ts
 private readonly httpClient = inject(HttpClient);
 
+// url de l'api
 private url = 'https://dog.ceo/api/breeds/image/'
 
+// methode pour faire la requete
 getPicture(){
   return this.httpClient.get<ResponseDog>(this.url + 'random');
 }
 
-getPictureById(id : number){
-  return this.httpClient.get<Response>(this.url + id );
-}
 
 
 }
