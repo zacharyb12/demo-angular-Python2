@@ -1,0 +1,20 @@
+
+<!-- affichage de l'array datacomponent
+@for(d of dataComponent;track d){
+{{d}}
+}
+
+
+@for(d of dataObservable$ |async;track d){
+{{d}}
+} -->
+
+
+<div>
+    <h3>Compteur</h3>
+    @for(value of counter; track value){
+        <p>{{value}}</p>
+    }
+    <button (click)="start()">start</button>
+    <button (click)="stop()">stop</button>
+</div>

@@ -31,6 +31,7 @@ import { childGuard } from '../core/guard/child-guard/child-guard';
 import { matchGuard } from '../core/guard/match-guard/match-guard';
 import { adminGuardGuard } from '../core/guard/admin-guard/admin-guard-guard';
 import { BookAppLogin } from '../components/pages/exercices/book-app-login/book-app-login';
+import { ObservableComponent } from '../components/pages/demo/observable-component/observable-component';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -52,7 +53,8 @@ export const routes: Routes = [
         {path : 'form-group' , component : FormGroupDemo , canDeactivate : [formGuard]},
         {path : 'form-array' , component : FormArrayDemo},
         {path : 'signals' , component : SignalDemo},
-        {path : 'guard' , component : Guard}
+        {path : 'guard' , component : Guard},
+        {path : 'observable' , component : ObservableComponent}
     ]},
     {path : 'exo' , component : ExoRouting , canActivateChild : [childGuard] ,  children : [ 
         {path : 'compteur' , component : CompteurComponent},
