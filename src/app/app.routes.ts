@@ -34,6 +34,9 @@ import { BookAppLogin } from '../components/pages/exercices/book-app-login/book-
 import { ObservableComponent } from '../components/pages/demo/observable-component/observable-component';
 import { HttpReq } from '../core/services/httpRequest/http-req';
 import { HttpRequest } from '../components/pages/demo/http-request/http-request';
+import { UserList } from '../components/pages/demo/resolver-user/user-list/user-list';
+import { UserDetails } from '../components/pages/demo/resolver-user/user-details/user-details';
+import { userResolver } from '../core/resolver/user-resolver';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -57,7 +60,9 @@ export const routes: Routes = [
         {path : 'signals' , component : SignalDemo},
         {path : 'guard' , component : Guard},
         {path : 'observable' , component : ObservableComponent},
-        {path : 'http' , component : HttpRequest}
+        {path : 'http' , component : HttpRequest},
+        {path : 'resolver', component : UserList},
+        {path : 'resolver-details/:id' , component : UserDetails , resolve : {user : userResolver}}
     ]},
     {path : 'exo' , component : ExoRouting , canActivateChild : [childGuard] ,  children : [ 
         {path : 'compteur' , component : CompteurComponent},

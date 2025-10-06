@@ -1,0 +1,8 @@
+<h1>User List</h1>
+
+@for(u of users;track u){
+    <p>{{u.id}}</p>
+    <p>{{u.email}}</p>
+    <p>{{u.age}}</p>
+    <button (click)="navigateToDetails(u.id)">Details</button>
+}

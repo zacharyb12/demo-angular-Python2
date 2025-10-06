@@ -96,6 +96,7 @@ if(user && user.password === password){
   // si l'utilisateur est admin je stocke son role 'admin' dans le localstorage
   this.isAdminSignalService.set(true);
 localStorage.setItem('role','admin');
+localStorage.setItem('token', 'token')
 
 
 }else{
