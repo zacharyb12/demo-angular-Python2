@@ -37,6 +37,7 @@ import { HttpRequest } from '../components/pages/demo/http-request/http-request'
 import { UserList } from '../components/pages/demo/resolver-user/user-list/user-list';
 import { UserDetails } from '../components/pages/demo/resolver-user/user-details/user-details';
 import { userResolver } from '../core/resolver/user-resolver';
+import { Testing } from '../components/pages/demo/testing/testing';
 
 export const routes: Routes = [
     {path: '' , component : HomeComponent},
@@ -62,7 +63,8 @@ export const routes: Routes = [
         {path : 'observable' , component : ObservableComponent},
         {path : 'http' , component : HttpRequest},
         {path : 'resolver', component : UserList},
-        {path : 'resolver-details/:id' , component : UserDetails , resolve : {user : userResolver}}
+        {path : 'resolver-details/:id' , component : UserDetails , resolve : {user : userResolver}},
+        {path : 'testing' , component : Testing}
     ]},
     {path : 'exo' , component : ExoRouting , canActivateChild : [childGuard] ,  children : [ 
         {path : 'compteur' , component : CompteurComponent},

@@ -1,0 +1,136 @@
+<h1>Testing</h1>
+
+
+<div class="card w-75 m-auto text-center">
+    <p>Lancer les tests : ng test</p>
+    <p>Lancer les test et observer les changements : ng test --watch=true</p>
+    <p>Afficher les resultats dans la console : ng test --watch=true --code-coverage</p>
+    <p>Selectioner le navigateur : ng test --browsers=ChromeHeadless</p>
+</div>
+
+<div class="card w-75 m-auto text-center">
+    <h2>Contenu du fichiers tests</h2>
+    <ul>
+        <li>Describe : contient les tests</li>
+        <li>BeforeEach : executer avant chaque test</li>
+        <li>AfterEach : executer apres chaque test</li>
+        <li>it : le test</li>
+    </ul>
+</div>
+
+<div class="card w-75 m-auto text-center">
+    <p>Component : instance du composant a tester</p>
+    <p>fixture : wrapper du composant a tester</p>
+    <p>SpyObj &#123;Objet&#125;: permet d'avoir un mock d'un service</p>
+    <p>SpyObj &#123;Objet&#125;: permet de mocker la route</p>
+    <p>BeforeEach : initialise l'environnement de test avant chaque test</p>
+    <p>it : definit un test unitaire</p>
+    <p>expect : permet de definir le resultat attendu</p>
+    <p>afterEach : executer apres chaque test</p>
+</div>
+
+<div>
+    <h1 class="card p-3 w-75 m-auto text-center mt-5 shadow-sm">Les bases des tests Angular</h1>
+
+<div class="container mt-5">
+  <p class="lead">
+    Bienvenue dans la section d'introduction aux tests dans Angular.
+    Vous y découvrirez les fondements des tests <strong>unitaires</strong> et <strong>d'intégration</strong>,
+    leur importance, ainsi que les outils utilisés dans l'écosystème Angular.
+  </p>
+  <p>
+    Cette page vous guidera à travers :
+</p>
+    <ul>
+      <li>Les types de tests (unitaires, intégration, end-to-end)</li>
+      <li>La configuration de l'environnement de test (Karma, Jasmine)</li>
+      <li>Les bonnes pratiques pour écrire des tests lisibles et fiables</li>
+    </ul>
+
+  <p>
+    Pour aller plus loin, n’hésitez pas à consulter les ressources officielles ci-dessous.
+  </p>
+</div>
+
+<div class="card p-4 m-5 shadow-sm bg-light">
+  <h2 class="mb-3"> Ressources utiles</h2>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><a href="https://angular.io/guide/testing" target="_blank">Guide officiel des tests Angular</a></li>
+    <li class="list-group-item"><a href="https://jasmine.github.io/" target="_blank">Documentation Jasmine</a></li>
+    <li class="list-group-item"><a href="https://karma-runner.github.io/latest/index.html" target="_blank">Documentation Karma</a></li>
+  </ul>
+</div>
+
+<div class="container mt-5">
+  <h2 class="card p-2 w-75 m-auto text-center mt-2 mb-4 shadow-sm"> Exemples de tests</h2>
+  <p>
+    Vous trouverez des exemples pratiques de tests dans le répertoire :
+    <code>src/app/test-base/tests</code>.
+    Ces fichiers illustrent comment tester des <strong>composants</strong>, <strong>services</strong>, et d'autres éléments clés d'une application Angular.
+  </p>
+  <p>
+    Pour exécuter les tests avec Angular CLI, utilisez la commande suivante dans votre terminal :
+  </p>
+  <pre class="bg-dark text-white text-center p-3 rounded"><code>ng test</code></pre>
+</div>
+
+<div class="container mt-5 mb-5">
+  <h2 class="mb-4">Structure d’un fichier de test</h2>
+  <p>Un fichier de test Angular avec Jasmine est généralement structuré comme ceci :</p>
+  <pre class="bg-dark text-white text-center p-3 rounded">
+    <code>
+        describe('TestBaseComponent', () =&gt; &#x7B;
+        let component: TestBaseComponent;
+        let fixture: ComponentFixture&lt;TestBaseComponent&gt;&#x3B;
+        &#x7D;);
+    </code>
+  </pre>
+  <div class="card p-4 text-center bg-white shadow-sm">
+    <p>
+      <strong>describe</strong> est une fonction fournie par <strong>Jasmine</strong>.
+      Elle permet de définir un groupe de tests lié à une unité fonctionnelle (comme un composant ou un service).
+    </p>
+    <p>
+      Le premier argument est une <em>description lisible</em> de ce qui est testé.
+      Le second est une fonction contenant le code des tests à exécuter.
+    </p>
+    <p>
+      À l’intérieur du bloc <code>describe</code>, on instancie le composant et son environnement de test avec <code>TestBed</code>,
+      et on utilise <code>it()</code> pour définir des cas de test concrets.
+    </p>
+  </div>
+</div>
+
+
+<div class="card p-4 m-4 shadow-sm bg-light">
+  <h3 class="mb-3">Initialisation des tests avec <code>beforeEach</code></h3>
+  <pre class="bg-white p-3 rounded"><code>
+beforeEach(async () =&gt; &#x7B;
+  await TestBed.configureTestingModule(&#x7B;
+    imports: [TestBaseComponent],  <span class="text-muted">// Import du composant à tester</span>
+  &#x7D;)
+  .compileComponents();  <span class="text-muted">// Compilation des templates et styles</span>
+
+  fixture = TestBed.createComponent(TestBaseComponent);  <span class="text-muted">// Création de l'instance du composant</span>
+  component = fixture.componentInstance;  <span class="text-muted">// Récupération de la classe du composant</span>
+  fixture.detectChanges();  <span class="text-muted">// Déclenche la détection des changements Angular</span>
+&#x7D;);
+  </code></pre>
+  <p>
+    Ce bloc <code>beforeEach</code> est exécuté <strong>avant chaque test</strong> pour préparer un environnement propre et isolé.
+  </p>
+  <p>
+    <strong>TestBed</strong> est un utilitaire d’Angular qui permet de configurer un module de test similaire à un module Angular classique.
+  </p>
+  
+    <em>Voici ce qui se passe :</em>
+    <ul>
+      <li><code>configureTestingModule</code> prépare le module de test avec les imports, déclarations et providers nécessaires.</li>
+      <li><code>compileComponents</code> compile les composants Angular (templates, styles).</li>
+      <li><code>createComponent</code> crée une instance physique du composant dans un fixture de test.</li>
+      <li><code>componentInstance</code> permet d’accéder à la classe TypeScript du composant.</li>
+      <li><code>detectChanges</code> lance la détection Angular pour initialiser le composant et son template.</li>
+    </ul>
+  
+</div>
+</div>
